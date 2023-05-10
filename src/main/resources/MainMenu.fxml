@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,29 +15,34 @@
    <top>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="162.0" layoutY="16.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #3a9fbc;" text="CART" textFill="#f7f6f6">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Button>
-            <TextField layoutX="307.0" layoutY="16.0" prefHeight="26.0" prefWidth="182.0" promptText="search bar" />
-            <Button layoutX="497.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #ee0700;" text="Logout" textFill="#f7f5f5" />
             <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
                </image>
             </ImageView>
-            <Button layoutX="91.0" layoutY="16.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #3a9fbc;" text="MOVIES" textFill="#f7f6f6">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Button>
+            <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
+              <menus>
+                <Menu mnemonicParsing="false" text="Movies">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cart" />
+                <Menu mnemonicParsing="false" text="Logout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField layoutX="385.0" layoutY="15.0" prefHeight="26.0" prefWidth="182.0" promptText="search bar" />
          </children>
       </AnchorPane>
    </top>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutX="56.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="slika1" fitHeight="124.0" fitWidth="90.0" layoutX="56.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/1.jpeg" />
                </image>
