@@ -53,7 +53,7 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button layoutX="154.0" layoutY="339.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #012229;" text="Create account" textFill="#f90000" />
+            <Button fx:id="createAccountButton" layoutX="154.0" layoutY="339.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #012229;" text="Create account" textFill="#f90000" onAction="#initialize" />
             <Text fill="#3a9fbc" layoutX="135.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log into your account">
                <font>
                   <Font name="System Bold" size="14.0" />

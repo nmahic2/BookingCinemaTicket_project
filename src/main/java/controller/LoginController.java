@@ -58,5 +58,22 @@ public class LoginController {
         }
     }
 
+    @FXML
+    private Button createAccountButton;
+
+    @FXML
+    public void initialize() {
+        createAccountButton.setOnAction(event -> {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/Registration.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
 }
