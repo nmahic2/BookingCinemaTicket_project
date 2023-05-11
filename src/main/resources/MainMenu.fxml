@@ -47,7 +47,7 @@
                   <Image url="@../../slikeprojekat/1.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutX="56.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutX="56.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/6.jpg" />
                </image>

@@ -2,29 +2,22 @@ package controller;
 
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-        import javafx.scene.Scene;
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 
-public class MainMenuController implements Initializable {
+public class MainMenuController<PaintRenderJob>  {
   // @FXML
   // private ImageView slika1; // pretpostavljajući da ste ID za sliku postavili na "slika1"
 
-    @FXML
-    javafx.scene.image.ImageView slika1;
+   // @FXML
+    //javafx.scene.image.ImageView slika1;
     @FXML
     private Menu Cart;
     @FXML
@@ -43,7 +36,7 @@ public class MainMenuController implements Initializable {
         stage.show();
     }
 
-    @FXML
+   /* @FXML
     private void handleClickOnImage() throws IOException{
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Movie.fxml"));
@@ -66,6 +59,23 @@ public class MainMenuController implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+    }
+*/
+
+    @FXML
+    private javafx.scene.image.ImageView slika1;
+
+    public void initialize() {
+        slika1.setOnMouseClicked(event -> {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
+                Scene novaScena = new Scene(root);
+                Stage stage = (Stage) slika1.getScene().getWindow();
+                stage.setScene(novaScena);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }

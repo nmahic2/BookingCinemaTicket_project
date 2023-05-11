@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MovieController">
    <top>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
+                  <Image url="@../IdeaProjects/BookingCinemaTicket_project/src/slikeprojekat/Cinema-Transparent.png.crdownload" />
                </image>
             </ImageView>
             <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
@@ -38,7 +42,41 @@
          </children>
       </AnchorPane>
    </top>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="223.0" fitWidth="175.0" layoutX="25.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../slikeprojekat/1.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="53.0" layoutY="267.0" text="NAME OF MOVIE" textFill="#f4f3f3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
    <center>
-      <ProgressBar prefWidth="200.0" progress="0.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea layoutY="37.0" prefHeight="129.0" prefWidth="372.0" text="&quot;Forrest Gump&quot; je američki film iz 1994. godine redatelja Roberta Zemeckisa, a glavnu ulogu tumači Tom Hanks. Film je dobitnik šest Oscara, uključujući i one za najbolji film, najboljeg redatelja i najboljeg glumca.Radnja filma prati život Forresta Gumpa, čovjeka sa niskim IQ-om, ali nevjerojatno dobrog srca. Forrest je odrastao u južnoj Alabami, a u životu ga je pratila niz događaja koji su ga odveli u sasvim neočekivane situacije. Kroz film pratimo njegovu priču koja je obuhvatila mnoge važne trenutke američke povijesti, kao što su borba za građanska prava, Vijetnamski rat, Watergate skandal, pad Berlinskog zida i mnoge druge." wrapText="true" />
+            <MenuButton layoutX="19.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose number of tickets">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+            <MenuButton layoutX="194.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose date and time">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </MenuButton>
+            <Button layoutX="223.0" layoutY="284.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
+            <Button layoutX="157.0" layoutY="284.0" mnemonicParsing="false" style="-fx-background-color: #ee0700;" text="DELETE" textFill="#f7f5f5" />
+         </children>
+      </AnchorPane>
    </center>
 </BorderPane>
