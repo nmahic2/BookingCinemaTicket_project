@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../IdeaProjects/BookingCinemaTicket_project/src/slikeprojekat/Cinema-Transparent.png.crdownload" />
+                  <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
                </image>
             </ImageView>
             <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
