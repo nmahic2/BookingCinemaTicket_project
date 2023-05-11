@@ -36,33 +36,17 @@ public class MainMenuController<PaintRenderJob>  {
         stage.show();
     }
 
-   /* @FXML
-    private void handleClickOnImage() throws IOException{
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Movie.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
+    @FXML
+    void setMovies(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
+        Parent root = loader.load();
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        slika1.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                try {
-                    handleClickOnImage();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        // Otvaranje nove scene s drugim prozorom
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
-*/
 
     @FXML
     private javafx.scene.image.ImageView slika1;

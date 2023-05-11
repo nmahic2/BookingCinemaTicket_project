@@ -25,12 +25,12 @@
             </ImageView>
             <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
                <menus>
-                  <Menu mnemonicParsing="false" text="Movies">
+                  <Menu fx:id="Movies" mnemonicParsing="false" text="Movies" onAction="#setMovies">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Go to movies" />
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Cart" />
+                  <Menu fx:id="Cart" mnemonicParsing="false" text="Cart" />
                   <Menu mnemonicParsing="false" text="Logout" onAction="#logout">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Logout" />
