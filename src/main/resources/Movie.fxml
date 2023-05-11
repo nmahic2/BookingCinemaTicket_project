@@ -47,7 +47,7 @@
          <children>
             <ImageView fitHeight="223.0" fitWidth="175.0" layoutX="25.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../slikeprojekat/1.jpg" />
+                  <Image url="@../../slikeprojekat/1.jpeg"  />
                </image>
             </ImageView>
             <Label layoutX="53.0" layoutY="267.0" text="NAME OF MOVIE" textFill="#f4f3f3">
