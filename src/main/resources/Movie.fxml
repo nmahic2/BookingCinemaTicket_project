@@ -27,13 +27,13 @@
                <menus>
                   <Menu mnemonicParsing="false" text="Movies">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Go to movies" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Cart" />
-                  <Menu mnemonicParsing="false" text="Logout">
+                  <Menu mnemonicParsing="false" text="Logout" onAction="#logout">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="Logout" />
                      </items>
                   </Menu>
                </menus>

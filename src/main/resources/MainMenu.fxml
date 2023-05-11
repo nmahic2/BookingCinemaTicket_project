@@ -24,7 +24,7 @@
               <menus>
                 <Menu fx:id="Movies" mnemonicParsing="false" text="Movies">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Go to movies" />
                   </items>
                 </Menu>
                 <Menu fx:id="Cart" mnemonicParsing="false" text="Cart"  />
