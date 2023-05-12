@@ -25,15 +25,15 @@
             </ImageView>
             <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
                <menus>
-                  <Menu fx:id="Movies" mnemonicParsing="false" text="Movies" onAction="#setMovies">
+                  <Menu mnemonicParsing="false" text="Movies">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Go to movies" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
                      </items>
                   </Menu>
-                  <Menu fx:id="Cart" mnemonicParsing="false" text="Cart" />
-                  <Menu mnemonicParsing="false" text="Logout" onAction="#logout">
+                  <Menu mnemonicParsing="false" text="Cart" />
+                  <Menu mnemonicParsing="false" text="Logout">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Logout" />
+                        <MenuItem mnemonicParsing="false" text="About" />
                      </items>
                   </Menu>
                </menus>
@@ -47,10 +47,10 @@
          <children>
             <ImageView fitHeight="223.0" fitWidth="175.0" layoutX="25.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../slikeprojekat/1.jpeg"  />
+                  <Image url="@../../slikeprojekat/1.jpeg" />
                </image>
             </ImageView>
-            <Label layoutX="53.0" layoutY="267.0" text="NAME OF MOVIE" textFill="#f4f3f3">
+            <Label layoutX="45.0" layoutY="260.0" text="MONSTER HOUSE" textFill="#f4f3f3">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -74,8 +74,7 @@
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
-            <Button layoutX="223.0" layoutY="284.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
-            <Button layoutX="157.0" layoutY="284.0" mnemonicParsing="false" style="-fx-background-color: #ee0700;" text="DELETE" textFill="#f7f5f5" />
+            <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
          </children>
       </AnchorPane>
    </center>
