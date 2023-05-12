@@ -17,10 +17,9 @@
    <top>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="384.0" layoutY="16.0" prefHeight="26.0" prefWidth="182.0" promptText="search bar" />
             <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Cinema-Transparent.png.crdownload" />
+                  <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
                </image>
             </ImageView>
             <MenuBar layoutX="74.0" layoutY="17.0" style="-fx-background-color: #3a9fbc;">
