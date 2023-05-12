@@ -45,6 +45,16 @@ public class MovieController {
         stage.show();
     }
 
+    @FXML
+    void setCart(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
+        Parent root = loader.load();
 
+        // Otvaranje nove scene s drugim prozorom
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
