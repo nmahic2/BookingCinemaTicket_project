@@ -82,7 +82,7 @@
                   <MenuItem mnemonicParsing="false" text="4" />
                </items>
             </MenuButton>
-            <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
+            <Button onAction="#handleFinishButton" layoutX="327.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
          </children>
       </AnchorPane>
    </center>

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -56,5 +57,16 @@ public class MovieController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    void handleFinishButton(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
+        Parent root = loader.load();
+        Scene novaScena = new Scene(root);
+        Stage trenutnaPozornica = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        trenutnaPozornica.setScene(novaScena);
+        trenutnaPozornica.show();
+    }
+
 }
 
