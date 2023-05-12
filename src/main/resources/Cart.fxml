@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CartController">
    <top>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
          <children>
@@ -25,19 +25,19 @@
             </ImageView>
             <MenuBar layoutX="74.0" layoutY="17.0" style="-fx-background-color: #3a9fbc;">
               <menus>
-                <Menu mnemonicParsing="false" text="Movies">
+                <Menu fx:id="Movies" mnemonicParsing="false" text="Movies" onAction="#setMovies">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Go to movies" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Cart">
+                <Menu fx:id="Cart" mnemonicParsing="false" text="Cart" onAction="#setCart">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Go to cart" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Logout">
+                <Menu fx:id="logout" mnemonicParsing="false" text="Logout" onAction="#logout">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Logout" />
                   </items>
                 </Menu>
               </menus>
