@@ -66,7 +66,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <TextArea layoutY="37.0" prefHeight="129.0" prefWidth="372.0" text="&quot;Forrest Gump&quot; je američki film iz 1994. godine redatelja Roberta Zemeckisa, a glavnu ulogu tumači Tom Hanks. Film je dobitnik šest Oscara, uključujući i one za najbolji film, najboljeg redatelja i najboljeg glumca.Radnja filma prati život Forresta Gumpa, čovjeka sa niskim IQ-om, ali nevjerojatno dobrog srca. Forrest je odrastao u južnoj Alabami, a u životu ga je pratila niz događaja koji su ga odveli u sasvim neočekivane situacije. Kroz film pratimo njegovu priču koja je obuhvatila mnoge važne trenutke američke povijesti, kao što su borba za građanska prava, Vijetnamski rat, Watergate skandal, pad Berlinskog zida i mnoge druge." wrapText="true" />
-            <MenuButton layoutX="19.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose number of tickets">
+            <MenuButton fx:id="NumberOfTickets" onAction="#chooseNumberOfTickets" layoutX="19.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose number of tickets">
               <items>
                 <MenuItem mnemonicParsing="false" text="01.02.2023 at 14:00h" />
                 <MenuItem mnemonicParsing="false" text="10.02.2023 at 13:00h" />
@@ -74,7 +74,7 @@
                  <MenuItem mnemonicParsing="false" text="26.02.2023 at 16:00h" />
               </items>
             </MenuButton>
-            <MenuButton layoutX="194.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose date and time">
+            <MenuButton fx:id="DateAndTime" onAction="#chooseDateTime" layoutX="194.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #3a9fbc;" text="choose date and time">
                <items>
                   <MenuItem mnemonicParsing="false" text="1" />
                   <MenuItem mnemonicParsing="false" text="2" />

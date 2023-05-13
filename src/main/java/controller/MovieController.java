@@ -86,5 +86,35 @@ public class MovieController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private MenuButton DateAndTime;
+
+    @FXML
+    private MenuButton NumberOfTickets;
+    @FXML
+    private void chooseDateTime(ActionEvent event) {
+        // Pripremite podatke koje želite prikazati u listi
+        String movieName = "Monster house";
+        String dateTime = "01.02.2023 at 14:00h";
+
+        // Kreirajte string sa svim podacima i dodajte ga u listu
+        String item = movieName + " - " + dateTime;
+        ListView<Object> cartListView = null;
+        cartListView.getItems().add(item);
+    }
+
+    @FXML
+    private void chooseNumberOfTickets(ActionEvent event) {
+        // Pripremite podatke koje želite prikazati u listi
+        String movieName = "Monster house";
+        String numberOfTickets = "2";
+
+        // Kreirajte string sa svim podacima i dodajte ga u listu
+        String item = movieName + " - " + numberOfTickets + " karte";
+        ListView<Object> cartListView = null;
+        cartListView.getItems().add(item);
+    }
+
 }
 

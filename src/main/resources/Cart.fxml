@@ -47,7 +47,7 @@
    <center>
       <AnchorPane prefHeight="97.0" prefWidth="161.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView layoutX="14.0" layoutY="58.0" prefHeight="200.0" prefWidth="572.0" />
+            <ListView fx:id="cartListView" layoutX="14.0" layoutY="58.0" prefHeight="200.0" prefWidth="572.0" />
             <Label layoutX="14.0" layoutY="268.0" prefHeight="18.0" prefWidth="78.0" text="TOTAL PRICE:" textFill="#fcfafa">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -68,9 +68,9 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="510.0" layoutY="273.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="FINISH" textFill="WHITE">
+            <Button onAction="#setInvoice" layoutX="510.0" layoutY="273.0" mnemonicParsing="false" style="-fx-background-color: #84d748;" text="FINISH" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Regular" size="12.0" />
                </font>
             </Button>
             <Label layoutX="512.0" layoutY="29.0" prefHeight="18.0" prefWidth="52.0" text="DELETE:" textFill="#fcfafa">
