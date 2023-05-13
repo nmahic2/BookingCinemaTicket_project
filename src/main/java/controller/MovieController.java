@@ -67,6 +67,24 @@ public class MovieController {
         trenutnaPozornica.setScene(novaScena);
         trenutnaPozornica.show();
     }
+    @FXML
+    private TextField searchBar;
 
+    @FXML
+    void searchMovies(ActionEvent event) throws IOException {
+        String searchTerm = searchBar.getText();
+
+        // Ovdje bi trebalo pretražiti bazu filmova po imenu filma
+        // Ako nađemo podudaranje, prebaciti korisnika na movie scenu
+        // Ako ne nađemo podudaranje, možemo prikazati poruku o greški
+        // U ovom primjeru ćemo samo prebaciti korisnika na movie scenu
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Movie.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) searchBar.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 
