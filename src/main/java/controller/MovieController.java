@@ -1,4 +1,4 @@
-/*package controller;
+package controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -116,9 +116,15 @@ public class MovieController {
         cartListView.getItems().add(item);
     }
 
+    //custom exception
+    public static class MovieNotFoundException extends RuntimeException {
+        public MovieNotFoundException(String message) {
+            super(message);
+        }
+    }
 }
-*/
 
+/*
 package controller;
 
 import javafx.application.Application;
@@ -267,6 +273,10 @@ public class MovieController {
         }
     }
 
-
+    public static class MovieNotFoundException extends RuntimeException {
+        public MovieNotFoundException(String message) {
+            super(message);
+        }
+    }
 }
-
+*/
