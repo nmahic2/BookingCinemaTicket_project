@@ -19,6 +19,7 @@ public class CartController {
     private Menu Logout;
     @FXML
     private Menu Movies;
+
     @FXML
     void logout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
@@ -55,7 +56,7 @@ public class CartController {
         stage.show();
     }
 
-    @FXML
+  /*  @FXML
     private ListView<String> cartListView;
     @FXML
     private void initialize() {
@@ -71,7 +72,7 @@ public class CartController {
                 }
             }
         });
-    }
+    }*/
 
     @FXML
     void setInvoice(ActionEvent event) throws IOException {
