@@ -69,16 +69,22 @@
             </TableView>
             <TextField layoutX="14.0" layoutY="286.0" />
             <TextField layoutX="236.0" layoutY="186.0" prefHeight="27.0" prefWidth="119.0" promptText="number of tickets" />
-            <MenuButton layoutX="98.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="DATE AND TIME">
+            <MenuButton   layoutX="98.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="DATE AND TIME">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem onAction="#selectDateAndTime" mnemonicParsing="false" text="10.6.2023 at 13:00h" />
+
               </items>
             </MenuButton>
             <MenuButton layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Monster house" />
+                  <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Justice leque" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Southland tales" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Anette" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Spiderman" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Onward" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The gray" />
+                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The legend of Zorro" />
                </items>
             </MenuButton>
             <Button fx:id="addButton" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#addData" style="-fx-background-color: #84d748;" text="ADD" textFill="WHITE">

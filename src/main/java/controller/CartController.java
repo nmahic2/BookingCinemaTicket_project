@@ -83,23 +83,6 @@ public class CartController {
         stage.show();
     }
 
-  /*  @FXML
-    private ListView<String> cartListView;
-    @FXML
-    private void initialize() {
-        // Postavite CellFactory ako želite prilagoditi izgled svake stavke
-        cartListView.setCellFactory(param -> new ListCell<>() {
-            @Override
-            protected void updateItem(String item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty || item == null) {
-                    setText(null);
-                } else {
-                    setText(item);
-                }
-            }
-        });
-    }*/
 
     @FXML
     void setInvoice(ActionEvent event) throws IOException {
@@ -137,7 +120,7 @@ public class CartController {
     }
 
 
-    public class Data {
+   /* public class Data {
         private int NumberOfTickets;
         private String Movie;
         private String DateAndTime;
@@ -172,8 +155,43 @@ public class CartController {
             this.DateAndTime = dateAndTime;
         }
     }
+*/
+   public class Data {
+       private int numberOfTickets;
+       private String movie;
+       private String dateAndTime;
 
-    //delete i update dugme u product and brand
+       public Data(int numberOfTickets, String movie, String dateAndTime) {
+           this.numberOfTickets = numberOfTickets;
+           this.movie = movie;
+           this.dateAndTime = dateAndTime;
+       }
+
+       public int getNumberOfTickets() {
+           return numberOfTickets;
+       }
+
+       public void setNumberOfTickets(int numberOfTickets) {
+           this.numberOfTickets = numberOfTickets;
+       }
+
+       public String getMovie() {
+           return movie;
+       }
+
+       public void setMovie(String movie) {
+           this.movie = movie;
+       }
+
+       public String getDateAndTime() {
+           return dateAndTime;
+       }
+
+       public void setDateAndTime(String dateAndTime) {
+           this.dateAndTime = dateAndTime;
+       }
+   }
+
     @FXML
     void deleteData(javafx.event.ActionEvent event) {
         int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
@@ -188,6 +206,21 @@ public class CartController {
             alert.showAndWait();
         }
     }
+
+
+
+    @FXML
+    void selectMovie(ActionEvent event) {
+        MenuItem selectedItem = (MenuItem) event.getSource();
+        String selectedMovie = selectedItem.getText();
+    }
+
+    @FXML
+    void selectDateAndTime(ActionEvent event) {
+        MenuItem selectedItem = (MenuItem) event.getSource();
+        String selectedDateAndTime = selectedItem.getText();
+    }
+
 
 
 }
