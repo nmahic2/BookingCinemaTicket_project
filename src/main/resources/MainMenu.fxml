@@ -77,7 +77,7 @@
                   <Image url="@../../slikeprojekat/4.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutX="58.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutX="58.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/7.jpg" />
                </image>
@@ -98,22 +98,22 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/3.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/9.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutX="137.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutX="137.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/2.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="124.0" fitWidth="90.0" layoutX="137.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="124.0" fitWidth="90.0" layoutX="137.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../slikeprojekat/10.jpg" />
                </image>

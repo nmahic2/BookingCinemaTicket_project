@@ -61,96 +61,13 @@ public class MainMenuController<PaintRenderJob>  {
     }
     @FXML
     private javafx.scene.image.ImageView slika1;
-    private javafx.scene.image.ImageView slika2;
-    private javafx.scene.image.ImageView slika3;
-    private javafx.scene.image.ImageView slika4;
-    private javafx.scene.image.ImageView slika5;
-    private javafx.scene.image.ImageView slika6;
-    private javafx.scene.image.ImageView slika7;
-    private javafx.scene.image.ImageView slika8;
+
     public void initialize() {
         slika1.setOnMouseClicked(event -> {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
                 Scene novaScena = new Scene(root);
                 Stage stage = (Stage) slika1.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika2.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika2.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika3.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika3.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika4.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika4.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika5.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika5.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika6.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika6.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika7.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika7.getScene().getWindow();
-                stage.setScene(novaScena);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        slika8.setOnMouseClicked(event -> {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/Movie.fxml"));
-                Scene novaScena = new Scene(root);
-                Stage stage = (Stage) slika8.getScene().getWindow();
                 stage.setScene(novaScena);
             } catch (IOException e) {
                 e.printStackTrace();

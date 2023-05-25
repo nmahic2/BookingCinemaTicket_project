@@ -19,9 +19,9 @@ public class CartController {
     private Menu Cart;
 
     @FXML
-    private Menu logout;
+    private Menu Logout;
     @FXML
-    private Menu Movies;
+    private Menu movies;
     //tabela,i dodavanje elemenata
     @FXML
     private TextField numberOfTickets;
