@@ -28,11 +28,18 @@ public class LoginController {
     @FXML
     private Label errorLabel;
 
-
+    public void login(ActionEvent e) {
+        if (usernameField.getText().isBlank() == false && passwordField.getText().isBlank() == false) {
+            errorLabel.setText("try again");
+        } else {
+            errorLabel.setText("Please enter username and password");
+        }
+    }
+}
     //  @FXML
   //  private Button loginButton;
 
-    @FXML
+  /*  @FXML
     void login(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -77,3 +84,4 @@ public class LoginController {
     }
 
 }
+*/

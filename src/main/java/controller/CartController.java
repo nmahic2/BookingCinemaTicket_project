@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Date;
+
 
 public class CartController {
     @FXML
@@ -116,6 +116,7 @@ public class CartController {
         String dataB = movie.getText();
         String dataC = dateAndTime.getText();
         int dataD = Integer.parseInt(numberOfTickets.getText());
+
 
         dataListMovieCart.add(new Data(dataD, dataB, dataC));
         tableView.setItems(dataListMovieCart);
