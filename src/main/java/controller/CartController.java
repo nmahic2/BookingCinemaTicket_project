@@ -123,7 +123,7 @@ public class CartController {
       numberOfTickets.clear();
 
     }
-
+//data
    public class Data {
        private int numberOfTickets;
        private String movie;
