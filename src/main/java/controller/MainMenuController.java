@@ -61,7 +61,13 @@ public class MainMenuController<PaintRenderJob>  {
     }
     @FXML
     private javafx.scene.image.ImageView slika1;
-
+    private javafx.scene.image.ImageView slika2;
+    private javafx.scene.image.ImageView slika3;
+    private javafx.scene.image.ImageView slika4;
+    private javafx.scene.image.ImageView slika5;
+    private javafx.scene.image.ImageView slika6;
+    private javafx.scene.image.ImageView slika7;
+    private javafx.scene.image.ImageView slika8;
     public void initialize() {
         slika1.setOnMouseClicked(event -> {
             try {
