@@ -17,8 +17,9 @@ import java.util.Date;
 public class CartController {
     @FXML
     private Menu Cart;
+
     @FXML
-    private Menu Logout;
+    private Menu logout;
     @FXML
     private Menu Movies;
     //tabela,i dodavanje elemenata
@@ -26,20 +27,25 @@ public class CartController {
     private TextField numberOfTickets;
 
     @FXML
-    private TableView<Data> tableView;
+    private TableView<CartController.Data> tableView;
 
     @FXML
-    private TableColumn<Data, String> Movie;
+    private TableColumn<CartController.Data, String> Movie;
 
     @FXML
-    private TableColumn<Data, String> DateAndTime;
+    private TableColumn<CartController.Data, String> DateAndTime;
 
     @FXML
-    private TableColumn<Data, Integer> NumberOfTickets;
+    private TableColumn<CartController.Data, Integer> NumberOfTickets;
+
+    @FXML
+    private MenuButton movie;
+    @FXML
+    private MenuButton dateAndTime;
 
     private int id = 0;
 
-    private ObservableList<Data> dataListMovieCart = FXCollections.observableArrayList();
+    private ObservableList<CartController.Data>dataListMovieCart = FXCollections.observableArrayList();
 
     //dugme za delete u update
     @FXML
@@ -100,62 +106,24 @@ public class CartController {
 
 
     //tabela i dodavanje elemenata
+    @FXML
     public void addData(ActionEvent actionEvent) {
 
-        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("Number of tickets"));
-        Movie.setCellValueFactory(new PropertyValueFactory<>("Movie"));
-        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("Date and time"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
 
-        String dataB = Movie.getText();
-        String dataC = DateAndTime.getText();
-        int dataD = Integer.parseInt(NumberOfTickets.getText());
+        String dataB = movie.getText();
+        String dataC = dateAndTime.getText();
+        int dataD = Integer.parseInt(numberOfTickets.getText());
 
         dataListMovieCart.add(new Data(dataD, dataB, dataC));
         tableView.setItems(dataListMovieCart);
 
-       /* NumberOfTickets.clear();
-        Movie.clear();
-        DateAndTime.clear();
-        */
+      numberOfTickets.clear();
+
     }
 
-
-   /* public class Data {
-        private int NumberOfTickets;
-        private String Movie;
-        private String DateAndTime;
-
-        public Data(int NumberOfTickets, String Movie, String DateAndTime) {
-            this.Movie = Movie;
-            this.NumberOfTickets = NumberOfTickets;
-            this.DateAndTime = DateAndTime;
-        }
-
-        public int getNumberOfTickets() {
-            return NumberOfTickets;
-        }
-
-        public void setNumberOfTickets(int numberOfTickets) {
-            this.NumberOfTickets = numberOfTickets;
-        }
-
-        public String getMovie() {
-            return Movie;
-        }
-
-        public void setMovie(String movie) {
-            this.Movie = movie;
-        }
-
-        public String getDateAndTime() {
-            return DateAndTime;
-        }
-
-        public void setDateAndTime(String dateAndTime) {
-            this.DateAndTime = dateAndTime;
-        }
-    }
-*/
    public class Data {
        private int numberOfTickets;
        private String movie;
@@ -210,17 +178,18 @@ public class CartController {
 
 
     @FXML
-    void selectMovie(ActionEvent event) {
-        MenuItem selectedItem = (MenuItem) event.getSource();
-        String selectedMovie = selectedItem.getText();
+    void selectMovie(ActionEvent actionEvent) {
+        MenuItem selectedItem = (MenuItem) actionEvent.getSource();
+        String selectedCategory = selectedItem.getText();
+        movie.setText(selectedCategory);
     }
 
     @FXML
-    void selectDateAndTime(ActionEvent event) {
-        MenuItem selectedItem = (MenuItem) event.getSource();
-        String selectedDateAndTime = selectedItem.getText();
+    void selectDateAndTime(ActionEvent actionEvent) {
+        MenuItem selectedItem = (MenuItem) actionEvent.getSource();
+        String selectedCategory = selectedItem.getText();
+        dateAndTime.setText(selectedCategory);
     }
-
 
 
 }
