@@ -69,12 +69,14 @@ public class CartController {
     @FXML
     private Button addButton;
 
-
+/*
     @FXML
     public void initialize() {
         List<String> movies = priceDBService.getAllMovies();
-       // movieDropdown.setItems(FXCollections.observableArrayList(movies));
     }
+
+ */
+
 
 
     public CartController() {
