@@ -64,10 +64,10 @@
                 <TableColumn fx:id="Movie" prefWidth="75.99999809265137" text="MOVIE" />
                 <TableColumn fx:id="DateAndTime" prefWidth="140.00000762939453" text="DATE AND TIME" />
                   <TableColumn fx:id="NumberOfTickets" prefWidth="125.5999755859375" text="NUMBER OF TICKETS" />
-                  <TableColumn prefWidth="63.20001831054685" text="PRICE" />
+                  <TableColumn fx:id="dataColumnPrice" prefWidth="63.20001831054685" text="PRICE" />
               </columns>
             </TableView>
-            <TextField layoutX="14.0" layoutY="286.0" />
+            <TextField fx:id="subtotal" layoutX="14.0" layoutY="286.0" />
             <TextField fx:id="numberOfTickets" layoutX="236.0" layoutY="186.0" prefHeight="27.0" prefWidth="119.0" promptText="number of tickets" />
             <MenuButton fx:id="dateAndTime"  layoutX="98.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="DATE AND TIME">
               <items>

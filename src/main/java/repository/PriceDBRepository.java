@@ -59,6 +59,41 @@ public class PriceDBRepository {
         }
     }
 
+    /*public int getPriceForMovie(String movie) {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT price FROM movies WHERE movie = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, movie);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("price");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0; // Return a default price if the movie is not found or there is an error
+    }
+*/
+
+    public int getPriceForMovie(String movie) {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT price FROM movies WHERE movie = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, movie);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("price");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0; // Return a default price if the movie is not found or there is an error
+    }
 
 
 }
+
