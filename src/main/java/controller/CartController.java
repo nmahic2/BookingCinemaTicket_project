@@ -118,19 +118,19 @@ public class CartController {
         int dataD = Integer.parseInt(numberOfTickets.getText());
 
 
-        dataListMovieCart.add(new Data(dataD, dataB, dataC));
+        dataListMovieCart.add(new Data(dataB, dataC, dataD));
         tableView.setItems(dataListMovieCart);
 
       numberOfTickets.clear();
 
     }
 //data
-   public class Data {
+   public static class Data {
        private int numberOfTickets;
        private String movie;
        private String dateAndTime;
 
-       public Data(int numberOfTickets, String movie, String dateAndTime) {
+       public Data( String movie, String dateAndTime, int numberOfTickets) {
            this.numberOfTickets = numberOfTickets;
            this.movie = movie;
            this.dateAndTime = dateAndTime;
