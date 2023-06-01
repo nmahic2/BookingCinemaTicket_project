@@ -37,7 +37,8 @@ public class CartController {
 
     @FXML
     private TableColumn<CartController.Data, Integer> NumberOfTickets;
-
+    @FXML
+    private TableColumn<Data, Integer> dataColumnPrice;
     @FXML
     private MenuButton movie;
     @FXML
@@ -47,12 +48,19 @@ public class CartController {
 
     private ObservableList<CartController.Data>dataListMovieCart = FXCollections.observableArrayList();
 
+    private PriceDBService priceDBService;
+
     //dugme za delete u update
     @FXML
     private Button deleteButton;
 
     @FXML
     private Button addButton;
+
+    public CartController(){
+        priceDBService = new PriceDBService();
+
+    }
     @FXML
     void logout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
