@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import service.PriceDBService;
 
 public class CartController {
     @FXML
