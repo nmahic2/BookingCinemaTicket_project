@@ -116,10 +116,11 @@ public class CartController {
     //tabela i dodavanje elemenata
     @FXML
     public void addData(ActionEvent actionEvent) {
-
-        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
         Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
         DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
 
         String dataB = movie.getText();
         String dataC = dateAndTime.getText();
@@ -138,10 +139,16 @@ public class CartController {
        private String movie;
        private String dateAndTime;
 
+       private int price;
+
+       private int id;
+
        public Data( String movie, String dateAndTime, int numberOfTickets) {
            this.numberOfTickets = numberOfTickets;
            this.movie = movie;
            this.dateAndTime = dateAndTime;
+           this.price = 0;
+           updatePrice();
        }
 
        public int getNumberOfTickets() {
@@ -167,13 +174,35 @@ public class CartController {
        public void setDateAndTime(String dateAndTime) {
            this.dateAndTime = dateAndTime;
        }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    private void updatePrice() {
+        this.price = this.retailPrice * this.numberOfTickets;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
    }
 
     @FXML
     void deleteData(javafx.event.ActionEvent event) {
         int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
+            Data selectedData = tableView.getItems().get(selectedIndex);
             tableView.getItems().remove(selectedIndex);
+            PriceDBService.removeData(selectedData);
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             //prozor za ispisivanje poruke

@@ -5,7 +5,7 @@ import repository.PriceDBRepository;
 
 
 public class PriceDBService {
-    private PriceDBRepository PriceDBRepository;
+    private static PriceDBRepository PriceDBRepository;
 
     public PriceDBService() {
         PriceDBRepository = new PriceDBRepository();
@@ -16,7 +16,7 @@ public class PriceDBService {
         PriceDBRepository.addData(data);
     }
 
-    public void removeData(CartController.Data data) {
+    public static void removeData(CartController.Data data) {
         PriceDBRepository.removeData(data);
     }
 
