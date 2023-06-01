@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.ComboBox?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CartController">
    <top>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
@@ -75,8 +76,13 @@
 
               </items>
             </MenuButton>
-            <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">
-               <items>
+
+
+
+             <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">-->
+
+
+             <items>
                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Monster house" />
                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Justice leque" />
                    <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Southland tales" />
@@ -87,6 +93,9 @@
                    <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The legend of Zorro" />
                </items>
             </MenuButton>
+
+
+
             <Button fx:id="addButton" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#addData" style="-fx-background-color: #84d748;" text="ADD" textFill="WHITE">
                <font>
                   <Font name="Regular" size="12.0" />

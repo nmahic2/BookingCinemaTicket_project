@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import static java.sql.DriverManager.getConnection;
 
@@ -29,6 +30,7 @@ public class PriceDBService {
     }
 
 }*/
+
 public class PriceDBService {
     private static PriceDBRepository priceDBRepository;
 
@@ -43,7 +45,9 @@ public class PriceDBService {
         priceDBRepository.addData(data);
     }
 
-
+    public List<String> getAllMovies() {
+        return priceDBRepository.getAllMovies();
+    }
 
     public static void removeData(CartController.Data data) {
         priceDBRepository.removeData(data);
@@ -51,8 +55,6 @@ public class PriceDBService {
     public PriceDBService(PriceDBRepository priceDBRepository) {
         this.priceDBRepository = priceDBRepository;
     }
-
-
 
 }
 

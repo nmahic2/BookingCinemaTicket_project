@@ -12,6 +12,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
+
 import service.PriceDBService;
 import repository.PriceDBRepository;
 
@@ -66,6 +68,14 @@ public class CartController {
 
     @FXML
     private Button addButton;
+
+
+    @FXML
+    public void initialize() {
+        List<String> movies = priceDBService.getAllMovies();
+       // movieDropdown.setItems(FXCollections.observableArrayList(movies));
+    }
+
 
     public CartController() {
 
@@ -168,7 +178,7 @@ public class CartController {
     }
 */
 
-    /*
+
     @FXML
     public void addData(ActionEvent actionEvent) {
         Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
@@ -189,8 +199,8 @@ public class CartController {
         calculateSubtotal(); // Update the subtotal after adding the data
     }
 
-*/
 
+/*
     @FXML
     public void addData(ActionEvent actionEvent) {
         Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
@@ -210,6 +220,8 @@ public class CartController {
         numberOfTickets.clear();
         calculateSubtotal(); // Update the subtotal after adding the data
     }
+
+ */
 
 
     @FXML
@@ -322,6 +334,7 @@ public class CartController {
         String selectedCategory = selectedItem.getText();
         movie.setText(selectedCategory);
     }
+
 
     @FXML
     void selectDateAndTime(ActionEvent actionEvent) {

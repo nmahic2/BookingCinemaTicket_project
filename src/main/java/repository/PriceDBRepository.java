@@ -7,25 +7,27 @@ import javafx.collections.ObservableList;
 
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PriceDBRepository {
-    private ObservableList<CartController.Data> dataListCashRegister;
+    private ObservableList<CartController.Data> dataListCart;
 
     public PriceDBRepository() {
-        dataListCashRegister = FXCollections.observableArrayList();
+        dataListCart = FXCollections.observableArrayList();
     }
 
     public void addData(CartController.Data data) {
-        dataListCashRegister.add(data);
+        dataListCart.add(data);
        insertDataIntoDatabase(data);
     }
 
     public void removeData(CartController.Data data) {
-        dataListCashRegister.remove(data);
+        dataListCart.remove(data);
     }
 
     public ObservableList<CartController.Data> getDataList() {
-        return dataListCashRegister;
+        return dataListCart;
     }
 
     private static Connection getConnection() throws SQLException {
@@ -37,7 +39,7 @@ public class PriceDBRepository {
 
     private void insertDataIntoDatabase(CartController.Data data) {
         try (Connection connection = getConnection()) {
-            String query = "INSERT INTO cart (movie, dateandtime, numberoftickets, price) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO cart (movie, dateAndTime, numberOfTickets, price) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, data.getMovie());
             statement.setString(2, data.getDateAndTime());
@@ -59,23 +61,23 @@ public class PriceDBRepository {
         }
     }
 
-    /*public int getPriceForMovie(String movie) {
-        try (Connection connection = getConnection()) {
-            String query = "SELECT price FROM movies WHERE movie = ?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, movie);
 
+    //dohvaca filmove iz baze u listu
+    public List<String> getAllMovies() {
+        List<String> movies = new ArrayList<>();
+        try (Connection connection = getConnection()) {
+            String query = "SELECT movie FROM movies";
+            PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                return resultSet.getInt("price");
+            while (resultSet.next()) {
+                String movie = resultSet.getString("movie");
+                movies.add(movie);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return 0; // Return a default price if the movie is not found or there is an error
+        return movies;
     }
-*/
 
     public int getPriceForMovie(String movie) {
         try (Connection connection = getConnection()) {
@@ -96,4 +98,5 @@ public class PriceDBRepository {
 
 
 }
+
 
