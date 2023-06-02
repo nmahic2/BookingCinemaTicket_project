@@ -78,7 +78,6 @@ public class CartController {
  */
 
 
-
     public CartController() {
 
         priceDBRepository = new PriceDBRepository();
@@ -355,3 +354,5 @@ public class CartController {
         subtotal.setText(Integer.toString(subtotalPrice));
     }
 }
+
+

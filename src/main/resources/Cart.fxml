@@ -79,7 +79,7 @@
 
 
 
-             <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">-->
+            <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">
 
 
              <items>
