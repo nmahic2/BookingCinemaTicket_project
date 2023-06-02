@@ -88,13 +88,13 @@ import service.LoginService;
 
 public class LogInController {
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
 
     @FXML
-    private TextField passwordField;
+    TextField passwordField;
 
     @FXML
-    private Label errorLabel;
+    Label errorLabel;
 
     @FXML
     private Button loginButton;
