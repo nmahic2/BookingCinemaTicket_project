@@ -19,7 +19,7 @@ public class PriceDBRepository {
 
     public void addData(CartController.Data data) {
         dataListCart.add(data);
-       insertDataIntoDatabase(data);
+        insertDataIntoDatabase(data);
     }
 
     public void removeData(CartController.Data data) {
@@ -98,5 +98,7 @@ public class PriceDBRepository {
 
 
 }
+
+
 
 
