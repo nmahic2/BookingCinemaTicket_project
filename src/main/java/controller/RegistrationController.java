@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import java.io.IOException;
+import service.UserAccountService;
+
 
 public class RegistrationController {
 
@@ -24,21 +26,23 @@ public class RegistrationController {
     @FXML
     private TextField passwordFieldRegistration;
     @FXML
-    private TextField phoneNumberFieldRegistration;
+    private TextField lastnameFieldRegistration;
     @FXML
-    private TextField emailFieldRegistration;
+    private TextField firstnameFieldRegistration;
     @FXML
     private Label errorLabelRegistration;
 
+
+/*
     @FXML
     void loginRegistration(ActionEvent event) {
         String username = usernameFieldRegistration.getText();
         String password = passwordFieldRegistration.getText();
-        String email = emailFieldRegistration.getText();
-        String phoneNumber = phoneNumberFieldRegistration.getText();
+        String firstname = firstnameFieldRegistration.getText();
+        String lastname = lastnameFieldRegistration.getText();
 
         // Provjera korisničkog imena i lozinke
-        if (username.equals("nejra") && password.equals("nejra") && email.equals("nmahic2") && phoneNumber.equals("1") ) {
+        if (username.equals("nejra") && password.equals("nejra") && firstname.equals("nmahic2") && lastname.equals("1") ) {
             try {
                 // Učitavanje FXML datoteke drugog prozora
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
@@ -54,4 +58,53 @@ public class RegistrationController {
             }
         }
     }
+
+ */
+
+    @FXML
+    void register(ActionEvent event) {
+        String username = usernameFieldRegistration.getText();
+        String password = passwordFieldRegistration.getText();
+        String firstName = firstnameFieldRegistration.getText();
+        String lastName = lastnameFieldRegistration.getText();
+
+        // Provjerite da li su sva polja popunjena
+        if (username.isEmpty() || password.isEmpty() ||  firstName.isEmpty() || lastName.isEmpty()) {
+            errorLabelRegistration.setText("Please fill in all fields");
+            return;
+        } else{
+            try {
+                // Učitavanje FXML datoteke drugog prozora
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
+                Parent root = loader.load();
+
+                // Otvaranje nove scene s drugim prozorom
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        // Kreirajte korisnički račun
+        boolean success = UserAccountService.createUserAccount(firstName, lastName, username, password);
+
+        if (success) {
+            errorLabelRegistration.setText("Registration successful!");
+            clearFields();
+        } else {
+            errorLabelRegistration.setText("Username already exists. Please choose a different username.");
+        }
+    }
+
+    private void clearFields() {
+        usernameFieldRegistration.clear();
+        passwordFieldRegistration.clear();
+        firstnameFieldRegistration.clear();
+        lastnameFieldRegistration.clear();
+    }
+
 }
