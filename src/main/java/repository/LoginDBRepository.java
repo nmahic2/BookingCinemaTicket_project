@@ -27,17 +27,28 @@ public class LoginDBRepository {
 package repository;
 
 import java.sql.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Properties;
 
 public class LoginDBRepository {
-    public Connection getConnection() {
+    private Connection getConnection() {
         Connection databaseLink = null;
-        String databaseName = "cinemaproject";
-        String databaseUser = "root";
-        String databasePassword = "12345";
-        String url = "jdbc:mysql://localhost:3306/" + databaseName + "?useSSL=false";
-
 
         try {
+            Properties properties = new Properties();
+            FileInputStream fis = new FileInputStream("config.properties");
+            properties.load(fis);
+
+            String databaseName = properties.getProperty("db.name");
+            String databaseUser = properties.getProperty("db.user");
+            String databasePassword = properties.getProperty("db.password");
+            String url = properties.getProperty("db.url");
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
         } catch (Exception e) {
