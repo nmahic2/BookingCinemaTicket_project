@@ -128,50 +128,6 @@ public class CartController {
 
 
 
-
-    //tabela i dodavanje elemenata
-  /*  @FXML
-    public void addData(ActionEvent actionEvent) {
-        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
-        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
-        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
-        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-
-        String dataB = movie.getText();
-        String dataC = dateAndTime.getText();
-        int dataD = Integer.parseInt(numberOfTickets.getText());
-
-
-        dataListMovieCart.add(new Data(dataB, dataC, dataD));
-        tableView.setItems(dataListMovieCart);
-
-      numberOfTickets.clear();
-
-    }*/
- /*
-
-    @FXML
-    public void addData(ActionEvent actionEvent) {
-        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
-        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
-        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
-        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-        String dataB = movie.getText();
-        String dataC = dateAndTime.getText();
-        int dataD = Integer.parseInt(numberOfTickets.getText());
-
-        int price = priceDBRepository.getPriceForMovie(dataB); // Dobijanje cijene filma iz PriceDBService
-
-        dataListMovieCart.add(new Data(dataB, dataC, dataD, price));
-        tableView.setItems(dataListMovieCart);
-
-        numberOfTickets.clear();
-    }
-*/
-
-
     @FXML
     public void addData(ActionEvent actionEvent) {
         Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
