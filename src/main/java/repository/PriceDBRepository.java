@@ -6,9 +6,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 
+import java.io.FileInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 public class PriceDBRepository {
@@ -31,11 +33,28 @@ public class PriceDBRepository {
         return dataListCart;
     }
 
-    private static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/cinemaproject?useSSL=false";
-        String username = "root";
-        String password = "12345";
-        return DriverManager.getConnection(url, username, password);
+    private Connection getConnection() {
+        Connection databaseLink = null;
+
+        try {
+            Properties properties = new Properties();
+            //FileInputStream fis = new FileInputStream("config.properties");
+            FileInputStream fis = new FileInputStream("src/main/resources/config.properties");
+
+            properties.load(fis);
+
+            String databaseName = properties.getProperty("db.name");
+            String databaseUser = properties.getProperty("db.user");
+            String databasePassword = properties.getProperty("db.password");
+            String url = properties.getProperty("db.url");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return databaseLink;
     }
 
     private void insertDataIntoDatabase(CartController.Data data) {
