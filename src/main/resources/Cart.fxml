@@ -17,96 +17,96 @@
 
 <?import javafx.scene.control.ComboBox?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CartController">
-   <top>
-      <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
-               </image>
-            </ImageView>
-            <MenuBar layoutX="74.0" layoutY="17.0" style="-fx-background-color: #3a9fbc;">
-              <menus>
-                <Menu fx:id="Movies" mnemonicParsing="false" onAction="#setMovies" text="Movies">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Go to movies" />
-                  </items>
-                </Menu>
-                <Menu fx:id="Cart" mnemonicParsing="false" onAction="#setCart" text="Cart">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Go to cart" />
-                  </items>
-                </Menu>
-                <Menu fx:id="logout" mnemonicParsing="false" onAction="#logout" text="Logout">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Logout" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <AnchorPane prefHeight="97.0" prefWidth="161.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="49.0" layoutY="264.0" prefHeight="18.0" prefWidth="78.0" text="TOTAL PRICE:" textFill="#fcfafa">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Button layoutX="510.0" layoutY="273.0" mnemonicParsing="false" onAction="#setInvoice" style="-fx-background-color: #84d748;" text="FINISH" textFill="WHITE">
-               <font>
-                  <Font name="Regular" size="12.0" />
-               </font>
-            </Button>
-            <TableView fx:id="tableView" layoutX="14.0" layoutY="20.0" prefHeight="151.0" prefWidth="406.0">
-              <columns>
-                <TableColumn fx:id="Movie" prefWidth="75.99999809265137" text="MOVIE" />
-                <TableColumn fx:id="DateAndTime" prefWidth="140.00000762939453" text="DATE AND TIME" />
-                  <TableColumn fx:id="NumberOfTickets" prefWidth="125.5999755859375" text="NUMBER OF TICKETS" />
-                  <TableColumn fx:id="dataColumnPrice" prefWidth="63.20001831054685" text="PRICE" />
-              </columns>
-            </TableView>
-            <TextField fx:id="subtotal" layoutX="14.0" layoutY="286.0" />
-            <TextField fx:id="numberOfTickets" layoutX="236.0" layoutY="186.0" prefHeight="27.0" prefWidth="119.0" promptText="number of tickets" />
-            <MenuButton fx:id="dateAndTime"  layoutX="98.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="DATE AND TIME">
-              <items>
-                <MenuItem onAction="#selectDateAndTime" mnemonicParsing="false" text="10.6.2023 at 13:00h" />
+    <top>
+        <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../slikeprojekat/Cinema-Transparent.png.crdownload" />
+                    </image>
+                </ImageView>
+                <MenuBar layoutX="74.0" layoutY="17.0" style="-fx-background-color: #3a9fbc;">
+                    <menus>
+                        <Menu fx:id="Movies" mnemonicParsing="false" onAction="#setMovies" text="Movies">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Go to movies" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="Cart" mnemonicParsing="false" onAction="#setCart" text="Cart">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Go to cart" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="logout" mnemonicParsing="false" onAction="#logout" text="Logout">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Logout" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="97.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="49.0" layoutY="264.0" prefHeight="18.0" prefWidth="78.0" text="TOTAL PRICE:" textFill="#fcfafa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Button layoutX="510.0" layoutY="273.0" mnemonicParsing="false" onAction="#setInvoice" style="-fx-background-color: #84d748;" text="FINISH" textFill="WHITE">
+                    <font>
+                        <Font name="Regular" size="12.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="tableView" layoutX="14.0" layoutY="20.0" prefHeight="151.0" prefWidth="406.0">
+                    <columns>
+                        <TableColumn fx:id="Movie" prefWidth="75.99999809265137" text="MOVIE" />
+                        <TableColumn fx:id="DateAndTime" prefWidth="140.00000762939453" text="DATE AND TIME" />
+                        <TableColumn fx:id="NumberOfTickets" prefWidth="125.5999755859375" text="NUMBER OF TICKETS" />
+                        <TableColumn fx:id="dataColumnPrice" prefWidth="63.20001831054685" text="PRICE" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="subtotal" layoutX="14.0" layoutY="286.0" />
+                <TextField fx:id="numberOfTickets" layoutX="236.0" layoutY="186.0" prefHeight="27.0" prefWidth="119.0" promptText="number of tickets" />
+                <MenuButton fx:id="dateAndTime"  layoutX="98.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="DATE AND TIME">
+                    <items>
+                        <MenuItem onAction="#selectDateAndTime" mnemonicParsing="false" text="10.6.2023 at 13:00h" />
 
-              </items>
-            </MenuButton>
-
-
-
-            <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">
-
-
-             <items>
-                  <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Monster house" />
-                  <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Justice leque" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Southland tales" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Anette" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Spiderman" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Onward" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The gray" />
-                   <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The legend of Zorro" />
-               </items>
-            </MenuButton>
+                    </items>
+                </MenuButton>
 
 
 
-            <Button fx:id="addButton" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#addData" style="-fx-background-color: #84d748;" text="ADD" textFill="WHITE">
-               <font>
-                  <Font name="Regular" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="deleteButton" layoutX="508.0" layoutY="83.0" mnemonicParsing="false" onAction="#deleteData" style="-fx-background-color: #84d748;" text="DELETE" textFill="WHITE">
-               <font>
-                  <Font name="Regular" size="12.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </center>
+                <MenuButton fx:id="movie" layoutX="14.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="MOVIE">
+
+
+                    <items>
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Monster house" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Justice leque" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Southland tales" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Anette" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Spiderman" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Onward" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The gray" />
+                        <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The legend of Zorro" />
+                    </items>
+                </MenuButton>
+
+
+
+                <Button fx:id="addButton" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#addData" style="-fx-background-color: #84d748;" text="ADD" textFill="WHITE">
+                    <font>
+                        <Font name="Regular" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="deleteButton" layoutX="508.0" layoutY="83.0" mnemonicParsing="false" onAction="#deleteData" style="-fx-background-color: #84d748;" text="DELETE" textFill="WHITE">
+                    <font>
+                        <Font name="Regular" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>
