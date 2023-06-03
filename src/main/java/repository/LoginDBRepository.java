@@ -41,7 +41,9 @@ public class LoginDBRepository {
 
         try {
             Properties properties = new Properties();
-            FileInputStream fis = new FileInputStream("config.properties");
+            //FileInputStream fis = new FileInputStream("config.properties");
+            FileInputStream fis = new FileInputStream("src/main/resources/config.properties");
+
             properties.load(fis);
 
             String databaseName = properties.getProperty("db.name");
