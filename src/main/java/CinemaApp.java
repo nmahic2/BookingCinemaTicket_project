@@ -27,9 +27,26 @@ public class CinemaApp {
         System.out.println("1. Film 1");
         System.out.println("2. Film 2");
         System.out.println("3. Film 3");
-        System.out.print("Unesite broj filma: ");
-        int choice = scanner.nextInt();
+
+        int choice = 0;
+        boolean validChoice = false;
+        while (!validChoice) {
+            System.out.print("Unesite broj filma: ");
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                if (choice >= 1 && choice <= 3) {
+                    validChoice = true;
+                } else {
+                    System.out.println("Nevažeći unos. Molimo odaberite broj između 1 i 3.");
+                }
+            } else {
+                System.out.println("Nevažeći unos. Molimo unesite broj filma.");
+                scanner.next(); // Preskoči neispravan unos
+            }
+        }
+
         scanner.nextLine(); // Prazni red nakon unosa broja filma
+
         String movieName;
         switch (choice) {
             case 1:
@@ -45,9 +62,11 @@ public class CinemaApp {
                 movieName = "Nepoznat film";
                 break;
         }
+
         System.out.println("Odabrali ste film: " + movieName);
         return movieName;
     }
+
 
     private static int selectNumberOfTickets() {
         System.out.print("Unesite broj karata: ");
@@ -65,10 +84,12 @@ public class CinemaApp {
     }
 
     private static void printTicket(String movieName, int numberOfTickets, String date) {
+        double ticketPrice = numberOfTickets * 5.0; // Izračun cijene karata
         System.out.println("Karta je uspješno rezervirana!");
         System.out.println("Film: " + movieName);
         System.out.println("Broj karata: " + numberOfTickets);
         System.out.println("Datum: " + date);
+        System.out.println("Cijena karata: " + ticketPrice + " BAM");
         System.out.println("Karte mogu biti preuzete na blagajni.");
     }
 }
