@@ -24,9 +24,14 @@ public class CinemaApp {
 
     private static String selectMovie() {
         System.out.println("Odaberite film:");
-        System.out.println("1. Film 1");
-        System.out.println("2. Film 2");
-        System.out.println("3. Film 3");
+        System.out.println("1. Monster house");
+        System.out.println("2. Justice legue");
+        System.out.println("3. Southland tales");
+        System.out.println("4. Anette");
+        System.out.println("5. Spiderman");
+        System.out.println("6. Onward");
+        System.out.println("7. The Gray");
+        System.out.println("8. The legend of Zorro");
 
         int choice = 0;
         boolean validChoice = false;
@@ -34,10 +39,10 @@ public class CinemaApp {
             System.out.print("Unesite broj filma: ");
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                if (choice >= 1 && choice <= 3) {
+                if (choice >= 1 && choice <= 8) {
                     validChoice = true;
                 } else {
-                    System.out.println("Nevažeći unos. Molimo odaberite broj između 1 i 3.");
+                    System.out.println("Nevažeći unos. Molimo odaberite broj između 1 i 8.");
                 }
             } else {
                 System.out.println("Nevažeći unos. Molimo unesite broj filma.");
@@ -50,13 +55,28 @@ public class CinemaApp {
         String movieName;
         switch (choice) {
             case 1:
-                movieName = "Film 1";
+                movieName = "Monster house";
                 break;
             case 2:
-                movieName = "Film 2";
+                movieName = "Justice legue";
                 break;
             case 3:
-                movieName = "Film 3";
+                movieName = "Southland tales";
+                break;
+            case 4:
+                movieName = "Anette";
+                break;
+            case 5:
+                movieName = "Spiderman";
+                break;
+            case 6:
+                movieName = "Onward";
+                break;
+            case 7:
+                movieName = "The Gray";
+                break;
+            case 8:
+                movieName = "The legend of Zorro";
                 break;
             default:
                 movieName = "Nepoznat film";
