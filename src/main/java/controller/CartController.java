@@ -69,6 +69,14 @@ public class CartController {
     @FXML
     private Button addButton;
 
+/*
+    @FXML
+    public void initialize() {
+        List<String> movies = priceDBService.getAllMovies();
+    }
+
+ */
+
 
     public CartController() {
 
@@ -126,6 +134,50 @@ public class CartController {
         stage.show();
     }
 
+    //************************
+
+
+    //tabela i dodavanje elemenata
+  /*  @FXML
+    public void addData(ActionEvent actionEvent) {
+        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+
+        String dataB = movie.getText();
+        String dataC = dateAndTime.getText();
+        int dataD = Integer.parseInt(numberOfTickets.getText());
+
+
+        dataListMovieCart.add(new Data(dataB, dataC, dataD));
+        tableView.setItems(dataListMovieCart);
+
+      numberOfTickets.clear();
+
+    }*/
+ /*
+
+    @FXML
+    public void addData(ActionEvent actionEvent) {
+        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        String dataB = movie.getText();
+        String dataC = dateAndTime.getText();
+        int dataD = Integer.parseInt(numberOfTickets.getText());
+
+        int price = priceDBRepository.getPriceForMovie(dataB); // Dobijanje cijene filma iz PriceDBService
+
+        dataListMovieCart.add(new Data(dataB, dataC, dataD, price));
+        tableView.setItems(dataListMovieCart);
+
+        numberOfTickets.clear();
+    }
+*/
 
 
     @FXML
@@ -149,6 +201,29 @@ public class CartController {
     }
 
 
+/*
+    @FXML
+    public void addData(ActionEvent actionEvent) {
+        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        String dataB = movie.getText();
+        String dataC = dateAndTime.getText();
+        int dataD = Integer.parseInt(numberOfTickets.getText());
+
+        int price = priceDBRepository.getPriceForMovie(dataB); // Get the price from the PriceDBService
+
+        dataListMovieCart.add(new Data(dataB, dataC, dataD, price));
+        tableView.setItems(dataListMovieCart);
+
+        numberOfTickets.clear();
+        calculateSubtotal(); // Update the subtotal after adding the data
+    }
+
+ */
+
 
     @FXML
     void deleteData(ActionEvent event) {
@@ -170,7 +245,22 @@ public class CartController {
 
     //data
     public static class Data {
+        /* private int numberOfTickets;
+         private String movie;
+         private String dateAndTime;
 
+         private int price;
+
+         private int id;
+
+         public Data( String movie, String dateAndTime, int numberOfTickets) {
+             this.numberOfTickets = numberOfTickets;
+             this.movie = movie;
+             this.dateAndTime = dateAndTime;
+             this.price = 0;
+             updatePrice();
+         }
+  */
         private int numberOfTickets;
         private String movie;
         private String dateAndTime;
@@ -230,6 +320,12 @@ public class CartController {
         public int getId() {
             return id;
         }
+
+          /*  public int getRetailPrice() {
+                return retailPrice;
+            }
+
+           */
     }
 
 
@@ -258,5 +354,6 @@ public class CartController {
         subtotal.setText(Integer.toString(subtotalPrice));
     }
 }
+
 
 
