@@ -238,11 +238,7 @@ public class CartController {
             return id;
         }
 
-          /*  public int getRetailPrice() {
-                return retailPrice;
-            }
 
-           */
     }
 
 
