@@ -83,7 +83,7 @@ public class PriceDBRepository {
 
 
     //dohvaca filmove iz baze u listu
-    public List<String> getAllMovies() {
+   /* public List<String> getAllMovies() {
         List<String> movies = new ArrayList<>();
         try (Connection connection = getConnection()) {
             String query = "SELECT movie FROM movies";
@@ -98,7 +98,7 @@ public class PriceDBRepository {
         }
         return movies;
     }
-
+*/
     public int getPriceForMovie(String movie) {
         try (Connection connection = getConnection()) {
             String query = "SELECT price FROM movies WHERE movie = ?";
@@ -116,6 +116,21 @@ public class PriceDBRepository {
         return 0; // Return a default price if the movie is not found or there is an error
     }
 
+    public List<String> getAllMovies() {
+        List<String> movies = new ArrayList<>();
+        try (Connection connection = getConnection()) {
+            String query = "SELECT movie FROM movies";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                String movie = resultSet.getString("movie");
+                movies.add(movie);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return movies;
+    }
 
 }
 
