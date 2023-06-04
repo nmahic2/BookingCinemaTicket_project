@@ -10,10 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.List;
-
 import service.PriceDBService;
 import repository.PriceDBRepository;
 
@@ -23,14 +21,12 @@ public class CartController {
     private PriceDBService priceDBService;
     @FXML
     public TextField pay;
-
     @FXML
     public TextField subtotal;
     @FXML
     public TextField balanceTextField;
     @FXML
     private Menu Cart;
-
     @FXML
     private Menu Logout;
     @FXML
@@ -38,16 +34,12 @@ public class CartController {
     //tabela,i dodavanje elemenata
     @FXML
     private TextField numberOfTickets;
-
     @FXML
     private TableView<CartController.Data> tableView;
-
     @FXML
     private TableColumn<CartController.Data, String> Movie;
-
     @FXML
     private TableColumn<CartController.Data, String> DateAndTime;
-
     @FXML
     private TableColumn<CartController.Data, Integer> NumberOfTickets;
     @FXML
@@ -56,9 +48,7 @@ public class CartController {
     private MenuButton movie;
     @FXML
     private MenuButton dateAndTime;
-
     private int id = 0;
-
     private ObservableList<CartController.Data> dataListMovieCart = FXCollections.observableArrayList();
 
 
@@ -266,6 +256,24 @@ public class CartController {
 
         subtotal.setText(Integer.toString(subtotalPrice));
     }
+
+    @FXML
+    public void initialize() {
+        List<String> movies = priceDBRepository.getAllMovies();
+        populateMovieMenu(movies);
+    }
+
+    private void populateMovieMenu(List<String> movies) {
+        ObservableList<MenuItem> movieItems = movie.getItems(); // Dohvatite referencu na listu stavki MenuButton-a
+
+        for (String movie : movies) {
+            MenuItem menuItem = new MenuItem(movie);
+            menuItem.setOnAction(this::selectMovie);
+            movieItems.add(menuItem); // Dodajte stavku u listu stavki MenuButton-a
+        }
+    }
+
+
 }
 
 
