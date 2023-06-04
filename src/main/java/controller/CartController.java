@@ -245,22 +245,7 @@ public class CartController {
 
     //data
     public static class Data {
-        /* private int numberOfTickets;
-         private String movie;
-         private String dateAndTime;
 
-         private int price;
-
-         private int id;
-
-         public Data( String movie, String dateAndTime, int numberOfTickets) {
-             this.numberOfTickets = numberOfTickets;
-             this.movie = movie;
-             this.dateAndTime = dateAndTime;
-             this.price = 0;
-             updatePrice();
-         }
-  */
         private int numberOfTickets;
         private String movie;
         private String dateAndTime;
