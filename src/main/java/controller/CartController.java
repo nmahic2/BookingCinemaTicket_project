@@ -69,13 +69,7 @@ public class CartController {
     @FXML
     private Button addButton;
 
-/*
-    @FXML
-    public void initialize() {
-        List<String> movies = priceDBService.getAllMovies();
-    }
 
- */
 
 
     public CartController() {
