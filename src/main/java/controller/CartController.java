@@ -65,7 +65,7 @@ public class CartController {
     public CartController() {
 
         priceDBRepository = new PriceDBRepository();
-        priceDBService = new PriceDBService(priceDBRepository);
+        priceDBService = new PriceDBService();
 
     }
 
@@ -120,10 +120,7 @@ public class CartController {
 
     //************************
 
-
-
-
-    @FXML
+   /* @FXML
     public void addData(ActionEvent actionEvent) {
         Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
         DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
@@ -141,11 +138,35 @@ public class CartController {
 
         numberOfTickets.clear();
         calculateSubtotal(); // Update the subtotal after adding the data
+
+
     }
 
+*/
+   @FXML
+   public void addData(ActionEvent actionEvent) {
+       Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+       DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+       NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+       dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+       String movie = this.movie.getText();
+       String dateAndTime = this.dateAndTime.getText();
+       int numberOfTickets = Integer.parseInt(this.numberOfTickets.getText());
 
+       int price = priceDBRepository.getPriceForMovie(movie); // Get the price from the PriceDBRepository
+       int totalPrice = price * numberOfTickets; // Calculate the total price
 
+       CartController.Data data = new CartController.Data(movie, dateAndTime, numberOfTickets, totalPrice);
+       priceDBService.addData(data);
+
+       dataListMovieCart.add(data);
+       tableView.setItems(dataListMovieCart);
+
+       this.numberOfTickets.clear();
+       calculateSubtotal(); // Update the subtotal after adding the data
+
+   }
 
     @FXML
     void deleteData(ActionEvent event) {
@@ -272,6 +293,7 @@ public class CartController {
             movieItems.add(menuItem); // Dodajte stavku u listu stavki MenuButton-a
         }
     }
+
 
 
 }
