@@ -83,6 +83,7 @@
 
 
                     <items>
+                        <!--
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Monster house" />
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Justice leque" />
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Southland tales" />
@@ -91,6 +92,7 @@
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="Onward" />
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The gray" />
                         <MenuItem onAction="#selectMovie"  mnemonicParsing="false" text="The legend of Zorro" />
+                        -->
                     </items>
                 </MenuButton>
 
