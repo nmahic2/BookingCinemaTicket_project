@@ -53,5 +53,14 @@ public class LoginServiceTest {
         // Assert
         assertFalse(isValid);
     }
+
+    @Test
+    public void testVslidateLogin_BlankSpace(){
+        String username = "";
+        String password = "";
+
+        boolean isBlank = loginService.validateLogin(username, password);
+
+    }
 }
 
