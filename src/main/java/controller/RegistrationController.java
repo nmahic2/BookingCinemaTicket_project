@@ -122,22 +122,22 @@ import java.io.IOException;
 import service.UserAccountService;
 
 
-public class RegistrationController {
+public class RegistrationController extends Parent {
 
     @FXML
-    private TextField usernameFieldRegistration;
+    TextField usernameFieldRegistration;
 
     @FXML
-    private TextField passwordFieldRegistration;
+    TextField passwordFieldRegistration;
 
     @FXML
-    private TextField lastnameFieldRegistration;
+    TextField lastnameFieldRegistration;
 
     @FXML
-    private TextField firstnameFieldRegistration;
+    TextField firstnameFieldRegistration;
 
     @FXML
-    private Label errorLabelRegistration;
+    Label errorLabelRegistration;
 
     @FXML
     private Button registration;
