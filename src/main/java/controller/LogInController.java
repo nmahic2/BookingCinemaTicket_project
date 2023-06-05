@@ -101,6 +101,10 @@ public class LogInController {
 
     private LoginService loginService;
 
+    @FXML
+    private Button createAccountButton;
+
+
     public LogInController() {
         this.loginService = new LoginService();
     }
@@ -134,8 +138,6 @@ public class LogInController {
         }
     }
 
-    @FXML
-    private Button createAccountButton;
 
     @FXML
     public void initialize() {
