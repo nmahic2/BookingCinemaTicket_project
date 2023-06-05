@@ -14,6 +14,8 @@ public class UserAccountServiceTest {
     public void validateLogin() {
     }
 }*/
+
+//tests
 import org.junit.Before;
 import org.junit.Test;
 import repository.UserAccountRepository;
