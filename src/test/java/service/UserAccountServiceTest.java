@@ -41,12 +41,13 @@ public class UserAccountServiceTest {
         String username = "nmahic1";
         String password = "12345";
 
+        UserAccountService userAccountService = new UserAccountService();
+
         // Act
-        boolean isCreated = UserAccountService.createUserAccount(firstName, lastName, username, password);
+        boolean isCreated = userAccountService.createUserAccount(firstName, lastName, username, password);
 
-// Assert
+        // Assert
         assertTrue(isCreated);
-
     }
 */
     @Test
