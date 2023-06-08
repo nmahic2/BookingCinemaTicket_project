@@ -66,15 +66,18 @@ public class LoginServiceTest {
 }
 
 */
+
+
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import repository.LoginDBRepository;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
+import org.junit.jupiter.api.BeforeEach;
 
 public class LoginServiceTest {
     @Mock
@@ -82,9 +85,9 @@ public class LoginServiceTest {
 
     private LoginService loginService;
 
-    @Before
+    @BeforeEach
     public void setup() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
         loginService = new LoginService(loginRepo);
     }
 
@@ -117,7 +120,7 @@ public class LoginServiceTest {
     }
 
     @Test
-    public void testVslidateLogin_BlankSpace(){
+    public void testValidateLogin_BlankSpace(){
         String username = "";
         String password = "";
 
