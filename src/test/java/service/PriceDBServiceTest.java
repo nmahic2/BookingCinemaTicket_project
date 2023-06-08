@@ -1,28 +1,5 @@
 package service;
-/*
-import org.junit.Test;
 
-import static org.junit.Assert.*;
-import controller.CartController;
-import service.PriceDBService;
-import repository.PriceDBRepository;
-public class PriceDBServiceTest {
-
-  @Test
-public void testAddData() {
-
-}
-
-    @Test
-    public void getAllMovies() {
-    }
-
-    @Test
-    public void removeData() {
-    }
-}
-
-*/
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
