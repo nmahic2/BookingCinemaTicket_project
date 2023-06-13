@@ -15,11 +15,7 @@ import java.io.IOException;
 
 
 public class MainMenuController<PaintRenderJob>  {
-  // @FXML
-  // private ImageView slika1; // pretpostavljajući da ste ID za sliku postavili na "slika1"
 
-   // @FXML
-    //javafx.scene.image.ImageView slika1;
     @FXML
     private Menu Cart;
     @FXML
