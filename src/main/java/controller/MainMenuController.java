@@ -170,21 +170,6 @@ public class MainMenuController<PaintRenderJob>  {
     @FXML
     private TextField searchBar;
 
-  /*  @FXML
-    void searchMovies(ActionEvent event) throws IOException {
-        String searchTerm = searchBar.getText();
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Movie.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) searchBar.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-
-    }*/
-
 
     @FXML
     void searchMovies(ActionEvent event) throws IOException {
