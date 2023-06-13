@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -169,7 +170,7 @@ public class MainMenuController<PaintRenderJob>  {
     @FXML
     private TextField searchBar;
 
-    @FXML
+  /*  @FXML
     void searchMovies(ActionEvent event) throws IOException {
         String searchTerm = searchBar.getText();
 
@@ -182,6 +183,50 @@ public class MainMenuController<PaintRenderJob>  {
         stage.show();
 
 
+    }*/
+
+
+    @FXML
+    void searchMovies(ActionEvent event) throws IOException {
+        String searchTerm = searchBar.getText();
+
+        Scene movieScene = getMovieScene(searchTerm);
+
+        if (movieScene != null) {
+            Stage stage = (Stage) searchBar.getScene().getWindow();
+            stage.setScene(movieScene);
+            stage.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Search Results");
+            alert.setHeaderText(null);
+            alert.setContentText("No movie found!");
+            alert.showAndWait();
+        }
+    }
+
+    private Scene getMovieScene(String movieName) throws IOException {
+        switch (movieName) {
+            case "Monster house":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie.fxml")));
+            case "Justice legue":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie2.fxml")));
+            case "Southland tales":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie3.fxml")));
+            case "Spuderman":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie5.fxml")));
+            case "Onward":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie6.fxml")));
+            case "The Gray":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie7.fxml")));
+            case "The legend of Zorro":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie8.fxml")));
+            case "Anette":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie4.fxml")));
+
+            default:
+                return null;
+        }
     }
 }
 
