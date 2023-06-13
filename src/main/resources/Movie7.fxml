@@ -53,7 +53,7 @@
                         <Image url="@../../slikeprojekat/7.jpg" />
                     </image>
                 </ImageView>
-                <Label layoutX="45.0" layoutY="260.0" text="MONSTER HOUSE" textFill="#f4f3f3">
+                <Label layoutX="45.0" layoutY="260.0" text="THE LEGEND OF ZORRO" textFill="#f4f3f3">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
