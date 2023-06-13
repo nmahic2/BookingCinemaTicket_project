@@ -12,17 +12,6 @@ import java.util.Properties;
 
 
 
-
-import controller.CartController;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.io.FileInputStream;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
 public class PriceDBRepository {
     private ObservableList<CartController.Data> dataListCart;
 
