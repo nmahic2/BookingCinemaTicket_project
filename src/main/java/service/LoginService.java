@@ -1,5 +1,5 @@
-package service;
 
+package service;
 import repository.LoginDBRepository;
 
 public class LoginService {
@@ -22,5 +22,3 @@ public class LoginService {
 
 
 }
-
-
