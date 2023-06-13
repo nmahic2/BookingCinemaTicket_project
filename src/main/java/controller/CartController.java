@@ -268,7 +268,7 @@ public class CartController {
         dateAndTime.setText(selectedCategory);
     }
 
-    @FXML
+  /*  @FXML
     void calculateSubtotal() {
         int subtotalPrice = 0;
         for (Data data : dataListMovieCart) {
@@ -277,6 +277,17 @@ public class CartController {
 
         subtotal.setText(Integer.toString(subtotalPrice));
     }
+*/
+  @FXML
+  void calculateSubtotal() {
+      int subtotalPrice = 0;
+      for (Data data : dataListMovieCart) {
+          subtotalPrice += data.getPrice();
+      }
+
+      subtotal.setText(Integer.toString(subtotalPrice));
+  }
+
 
     @FXML
     public void initialize() {
