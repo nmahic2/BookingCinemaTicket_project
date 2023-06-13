@@ -41,7 +41,6 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <TextField fx:id="searchBar" layoutX="385.0" layoutY="15.0" onAction="#searchMovies" prefHeight="26.0" prefWidth="182.0" promptText="search bar" />
             </children>
         </AnchorPane>
     </top>
