@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #012229;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MovieController">
+    <top>
+        <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3a9fbc;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../IdeaProjects/BookingCinemaTicket_project/src/slikeprojekat/Cinema-Transparent.png.crdownload" />
+                    </image>
+                </ImageView>
+                <MenuBar fx:id="menuBar" layoutX="74.0" layoutY="13.0" prefHeight="30.0" prefWidth="171.0" style="-fx-background-color: #3a9fbc;">
+                    <menus>
+                        <Menu fx:id="Movies" mnemonicParsing="false" text="Movies">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setMovies" text="Go to movies" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="Cart" mnemonicParsing="false" onAction="#setCart" text="Cart">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Go to cart" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="Logout" mnemonicParsing="false" onAction="#logout" text="Logout">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Logout" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <TextField fx:id="searchBar" layoutX="385.0" layoutY="15.0" onAction="#searchMovies" prefHeight="26.0" prefWidth="182.0" promptText="search bar" />
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="223.0" fitWidth="175.0" layoutX="25.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../slikeprojekat/4.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="45.0" layoutY="260.0" text="MONSTER HOUSE" textFill="#f4f3f3">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea layoutY="47.0" prefHeight="174.0" prefWidth="372.0" text="&quot;Forrest Gump&quot; je američki film iz 1994. godine redatelja Roberta Zemeckisa, a glavnu ulogu tumači Tom Hanks. Film je dobitnik šest Oscara, uključujući i one za najbolji film, najboljeg redatelja i najboljeg glumca.Radnja filma prati život Forresta Gumpa, čovjeka sa niskim IQ-om, ali nevjerojatno dobrog srca. Forrest je odrastao u južnoj Alabami, a u životu ga je pratila niz događaja koji su ga odveli u sasvim neočekivane situacije. Kroz film pratimo njegovu priču koja je obuhvatila mnoge važne trenutke američke povijesti, kao što su borba za građanska prava, Vijetnamski rat, Watergate skandal, pad Berlinskog zida i mnoge druge." wrapText="true" />
+                <Button layoutX="327.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleFinishButton" style="-fx-background-color: #84d748;" text="NEXT" textFill="#f7fcf7" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
