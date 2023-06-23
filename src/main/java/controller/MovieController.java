@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Kontroler koji upravlja funkcionalnostima za prikaz i interakciju s filmovima.
+ */
+
 public class MovieController {
     @FXML
     private Menu Cart;
@@ -22,6 +26,14 @@ public class MovieController {
     private Menu Logout;
     @FXML
     private Menu Movies;
+
+    /**
+     * Metoda koja se poziva prilikom odjave korisnika.
+     *
+     * @param event Akcija koja je pokrenula događaj odjave.
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za prijavu.
+     */
+
     @FXML
     void logout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
@@ -33,6 +45,13 @@ public class MovieController {
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     * Metoda koja se poziva prilikom odabira opcije "Filmovi".
+     *
+     * @param event Akcija koja je pokrenula događaj odabira opcije "Filmovi".
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za glavni izbornik.
+     */
 
     @FXML
     void setMovies(ActionEvent event) throws IOException {
@@ -46,6 +65,13 @@ public class MovieController {
         stage.show();
     }
 
+    /**
+     * Metoda koja se poziva prilikom odabira opcije "Korpa".
+     *
+     * @param event Akcija koja je pokrenula događaj odabira opcije "Korpa".
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za korpu.
+     */
+
     @FXML
     void setCart(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
@@ -57,7 +83,12 @@ public class MovieController {
         stage.setScene(scene);
         stage.show();
     }
-
+    /**
+     * Metoda koja se poziva prilikom pritiska na dugme "Završi".
+     *
+     * @param event Akcija koja je pokrenula događaj pritiska na dugme "Završi".
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za korpu.
+     */
     @FXML
     void handleFinishButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
@@ -67,8 +98,10 @@ public class MovieController {
         trenutnaPozornica.setScene(novaScena);
         trenutnaPozornica.show();
     }
-    @FXML
-    private TextField searchBar;
+
+
+   /* @FXML
+    private TextField searchBar;*/
 /*
     @FXML
     void searchMovies(ActionEvent event) throws IOException {
@@ -87,11 +120,12 @@ public class MovieController {
         stage.show();
     }
 */
-    @FXML
+  /*  @FXML
     private MenuButton DateAndTime;
 
     @FXML
-    private MenuButton NumberOfTickets;
+    private MenuButton NumberOfTickets;*/
+
     /*
     @FXML
     private void chooseDateTime(ActionEvent event) {
