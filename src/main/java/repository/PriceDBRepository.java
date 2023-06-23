@@ -11,28 +11,48 @@ import java.util.List;
 import java.util.Properties;
 
 
-
+/**
+ * Klasa koja pruža funkcionalnosti za pristup cijenama filmova u bazi podataka.
+ */
 public class PriceDBRepository {
     private ObservableList<CartController.Data> dataListCart;
-
+    /**
+     * Konstruktor koji inicijalizira listu podataka o košarici.
+     */
     public PriceDBRepository() {
         dataListCart = FXCollections.observableArrayList();
     }
-
+    /**
+     * Dodaje podatke o košarici u bazu podataka i listu podataka.
+     *
+     * @param data Podaci o košarici
+     */
     public void addData(CartController.Data data) {
         insertDataIntoDatabase(data);
         dataListCart.add(data);
     }
-
+    /**
+     * Uklanja podatke o košarici iz baze podataka i liste podataka.
+     *
+     * @param data Podaci o košarici
+     */
     public void removeData(CartController.Data data) {
         deleteDataFromDatabase(data);
         dataListCart.remove(data);
     }
-
+    /**
+     * Vraća listu podataka o košarici.
+     *
+     * @return Lista podataka o košarici
+     */
     public ObservableList<CartController.Data> getDataList() {
         return dataListCart;
     }
-
+    /**
+     * Metoda za uspostavljanje veze s bazom podataka.
+     *
+     * @return Veza s bazom podataka
+     */
     private Connection getConnection() {
         Connection databaseLink = null;
 
@@ -55,7 +75,11 @@ public class PriceDBRepository {
 
         return databaseLink;
     }
-
+    /**
+     * Ubacuje podatke o košarici u bazu podataka.
+     *
+     * @param data Podaci o košarici
+     */
     private void insertDataIntoDatabase(CartController.Data data) {
         try (Connection connection = getConnection()) {
             String query = "INSERT INTO cart (movie, dateandtime, numberoftickets, price) VALUES (?, ?, ?, ?)";
@@ -79,7 +103,11 @@ public class PriceDBRepository {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Briše podatke o košarici iz baze podataka.
+     *
+     * @param data Podaci o košarici koju treba obrisati
+     */
     private void deleteDataFromDatabase(CartController.Data data) {
         try (Connection connection = getConnection()) {
             String query = "DELETE FROM cart WHERE id = ?";
@@ -91,7 +119,12 @@ public class PriceDBRepository {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Vraća cijenu za određeni film iz baze podataka.
+     *
+     * @param movie Naziv filma
+     * @return Cijena filma
+     */
     public int getPriceForMovie(String movie) {
         try (Connection connection = getConnection()) {
             String query = "SELECT price FROM movies WHERE movie = ?";
@@ -108,7 +141,11 @@ public class PriceDBRepository {
 
         return 0; // Return a default price if the movie is not found or there is an error
     }
-
+    /**
+     * Vraća listu svih filmova iz baze podataka.
+     *
+     * @return Lista svih filmova
+     */
     public List<String> getAllMovies() {
         List<String> movies = new ArrayList<>();
         try (Connection connection = getConnection()) {
