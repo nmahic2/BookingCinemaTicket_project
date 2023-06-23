@@ -1,9 +1,15 @@
 
 import java.util.Scanner;
-
+/**
+ * Aplikacija za rezervaciju karata za kino.
+ */
 public class CinemaApp {
     private static Scanner scanner = new Scanner(System.in);
-
+    /**
+     * Glavna metoda koja pokreće aplikaciju za rezervaciju karata za kino.
+     *
+     * @param args Argumenti komandne linije
+     */
     public static void main(String[] args) {
         TicketBuilder ticketBuilder = new TicketBuilder();
 
@@ -20,7 +26,9 @@ public class CinemaApp {
 
         System.out.println(ticket);
     }
-
+    /**
+     * Metoda za prijavu korisnika.
+     */
     private static void login() {
         System.out.println("Dobrodošli! Molimo prijavite se.");
         System.out.print("Korisničko ime: ");
@@ -31,7 +39,11 @@ public class CinemaApp {
         // Implementirajte logiku provjere korisničkih podataka ovdje
         System.out.println("Prijavili ste se kao " + username);
     }
-
+    /**
+     * Metoda za odabir filma.
+     *
+     * @return Odabrani naziv filma
+     */
     private static String selectMovie() {
         System.out.println("Odaberite film:");
         System.out.println("1. Monster house");
@@ -97,6 +109,11 @@ public class CinemaApp {
         return movieName;
     }
 
+    /**
+     * Metoda za odabir broja karata.
+     *
+     * @return Odabrani broj karata
+     */
     private static int selectNumberOfTickets() {
         System.out.print("Unesite broj karata: ");
         int numberOfTickets = scanner.nextInt();
@@ -104,7 +121,11 @@ public class CinemaApp {
         System.out.println("Odabrali ste " + numberOfTickets + " karata.");
         return numberOfTickets;
     }
-
+    /**
+     * Metoda za odabir datuma.
+     *
+     * @return Odabrani datum
+     */
     private static String selectDate() {
         System.out.println("Odaberite datum:");
         System.out.println("1. 2023-06-15");
@@ -150,18 +171,30 @@ public class CinemaApp {
         return date;
     }
 }
-
+/**
+ * Klasa koja predstavlja kartu za film.
+ */
 class Ticket {
     private String movieName;
     private int numberOfTickets;
     private String date;
-
+    /**
+     * Konstruktor za stvaranje karte.
+     *
+     * @param movieName       Naziv filma
+     * @param numberOfTickets Broj karata
+     * @param date            Datum
+     */
     public Ticket(String movieName, int numberOfTickets, String date) {
         this.movieName = movieName;
         this.numberOfTickets = numberOfTickets;
         this.date = date;
     }
-
+    /**
+     * Vraća tekstualni prikaz karte za film.
+     *
+     * @return Tekstualni prikaz karte za film
+     */
     @Override
     public String toString() {
         double ticketPrice = numberOfTickets * 5.0;
@@ -173,27 +206,48 @@ class Ticket {
                 "Karte mogu biti preuzete na blagajni.";
     }
 }
-
+/**
+ * Builder klasa za stvaranje karte.
+ */
 class TicketBuilder {
     private String movieName;
     private int numberOfTickets;
     private String date;
-
+    /**
+     * Postavlja naziv filma.
+     *
+     * @param movieName Naziv filma
+     * @return Trenutna instanca TicketBuilder-a
+     */
     public TicketBuilder setMovieName(String movieName) {
         this.movieName = movieName;
         return this;
     }
-
+    /**
+     * Postavlja broj karata.
+     *
+     * @param numberOfTickets Broj karata
+     * @return Trenutna instanca TicketBuilder-a
+     */
     public TicketBuilder setNumberOfTickets(int numberOfTickets) {
         this.numberOfTickets = numberOfTickets;
         return this;
     }
-
+    /**
+     * Postavlja datum.
+     *
+     * @param date Datum
+     * @return Trenutna instanca TicketBuilder-a
+     */
     public TicketBuilder setDate(String date) {
         this.date = date;
         return this;
     }
-
+    /**
+     * Stvara novu instancu karte koristeći postavljene vrijednosti.
+     *
+     * @return Nova instanca Ticket-a
+     */
     public Ticket build() {
         return new Ticket(movieName, numberOfTickets, date);
     }
