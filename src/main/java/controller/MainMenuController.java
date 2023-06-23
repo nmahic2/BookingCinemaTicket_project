@@ -101,7 +101,6 @@ public class MainMenuController<PaintRenderJob>  {
      * Metoda koja se poziva prilikom inicijalizacije kontrolera.
      * Postavlja događaje za slike kako bi preusmjerila korisnika na odgovarajuću scenu.
      */
-
     public void initialize() {
         slika1.setOnMouseClicked(event -> {
             try {
