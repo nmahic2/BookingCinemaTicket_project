@@ -9,7 +9,7 @@ public class UserAccountService {
     /**
      * Konstruktor koji stvara novu instancu servisa s podrazumijevanim repozitorijem.
      */
-   public UserAccountService() {
+    public UserAccountService() {
         this.userRepository = new UserAccountRepository();
     }
     /**
@@ -23,7 +23,7 @@ public class UserAccountService {
      */
 
     public boolean createUserAccount(String firstName, String lastName, String username, String password) {
-        // Provjera je li korisničko ime već zauzeto
+        // Check if the username already exists
         if (userRepository.findByUsername(username)) {
             return false;
         }
@@ -31,6 +31,8 @@ public class UserAccountService {
         userRepository.save(firstName, lastName, username, password);
         return true;
     }
+
+
     /**
      * Provjerava valjanost korisničkog prijavljivanja.
      *
