@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Kontroler koji upravlja funkcionalnostima za prikaz glavnog menija sa filmovima.
+ */
 
 public class MainMenuController<PaintRenderJob>  {
 
@@ -22,6 +25,13 @@ public class MainMenuController<PaintRenderJob>  {
     private Menu Logout;
     @FXML
     private Menu Movies;
+
+    /**
+     * Metoda koja se poziva prilikom odjave korisnika.
+     *
+     * @param event Akcija koja je pokrenula događaj odjave.
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za prijavu.
+     */
     @FXML
     void logout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
@@ -34,6 +44,13 @@ public class MainMenuController<PaintRenderJob>  {
         stage.show();
     }
 
+    /**
+     * Metoda koja se poziva prilikom odabira opcije "Filmovi".
+     *
+     * @param event Akcija koja je pokrenula događaj odabira opcije "Filmovi".
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za glavni izbornik.
+     */
+
     @FXML
     void setMovies(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
@@ -45,6 +62,13 @@ public class MainMenuController<PaintRenderJob>  {
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     * Metoda koja se poziva prilikom odabira opcije "Korpa".
+     *
+     * @param event Akcija koja je pokrenula događaj odabira opcije "Korpa".
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteke za korpu.
+     */
     @FXML
     void setCart(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
@@ -72,6 +96,11 @@ public class MainMenuController<PaintRenderJob>  {
     private javafx.scene.image.ImageView slika7;
     @FXML
     private javafx.scene.image.ImageView slika8;
+
+    /**
+     * Metoda koja se poziva prilikom inicijalizacije kontrolera.
+     * Postavlja događaje za slike kako bi preusmjerila korisnika na odgovarajuću scenu.
+     */
 
     public void initialize() {
         slika1.setOnMouseClicked(event -> {
@@ -166,7 +195,12 @@ public class MainMenuController<PaintRenderJob>  {
     @FXML
     private TextField searchBar;
 
-
+    /**
+     * Metoda koja se poziva prilikom pretrage filmova.
+     *
+     * @param event Akcija koja je pokrenula događaj pretrage filmova.
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteka za filmove.
+     */
     @FXML
     void searchMovies(ActionEvent event) throws IOException {
         String searchTerm = searchBar.getText();
@@ -185,6 +219,13 @@ public class MainMenuController<PaintRenderJob>  {
             alert.showAndWait();
         }
     }
+    /**
+     * Metoda koja vraća odgovarajuću scenu za određeni naziv filma.
+     *
+     * @param movieName Naziv filma za koji se traži odgovarajuća scena.
+     * @return Scena za određeni naziv filma ili null ako film nije pronađen.
+     * @throws IOException U slučaju problema prilikom učitavanja FXML datoteka za filmove.
+     */
 
     private Scene getMovieScene(String movieName) throws IOException {
         switch (movieName) {
