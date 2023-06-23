@@ -11,13 +11,39 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import service.UserAccountService;
-
+/**
+ * Repozitorij za upravljanje podacima korisničkih računa u bazi podataka.
+ */
 public class UserAccountRepository {
+    /**
+     * Datoteka konfiguracije baze podataka.
+     */
     private static final String CONFIG_FILE = "src/main/resources/config.properties";
+    /**
+     * Ključ za naziv baze podataka u konfiguracijskoj datoteci.
+     */
     private static final String PROPERTY_DB_NAME = "db.name";
+    /**
+     * Ključ za korisnika baze podataka u konfiguracijskoj datoteci.
+     */
     private static final String PROPERTY_DB_USER = "db.user";
+    /**
+     * Ključ za lozinku korisnika baze podataka u konfiguracijskoj datoteci.
+     */
     private static final String PROPERTY_DB_PASSWORD = "db.password";
+    /**
+     * Ključ za URL baze podataka u konfiguracijskoj datoteci.
+     */
     private static final String PROPERTY_DB_URL = "db.url";
+
+    /**
+     * Sprema podatke o korisničkom računu u bazu podataka.
+     *
+     * @param firstName Ime korisnika
+     * @param lastName Prezime korisnika
+     * @param username Korisničko ime
+     * @param password Lozinka
+     */
 
     public void save(String firstName, String lastName, String username, String password) {
         try (Connection connection = getConnection()) {
@@ -32,7 +58,13 @@ public class UserAccountRepository {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Provjerava valjanost korisničkog prijavljivanja.
+     *
+     * @param username Korisničko ime
+     * @param password Lozinka
+     * @return {@code true} ako je prijava valjana, inače {@code false}
+     */
     public boolean validateLogin(String username, String password) {
         try (Connection connection = getConnection()) {
             String query = "SELECT * FROM useraccount WHERE username = ? AND password = ?";
@@ -46,7 +78,12 @@ public class UserAccountRepository {
         }
         return false;
     }
-
+    /**
+     * Provjerava postojanje korisnika s određenim korisničkim imenom.
+     *
+     * @param username Korisničko ime
+     * @return {@code true} ako postoji korisnik s navedenim korisničkim imenom, inače {@code false}
+     */
     public boolean findByUsername(String username) {
         try (Connection connection = getConnection()) {
             String query = "SELECT * FROM useraccount WHERE username = ?";
@@ -59,7 +96,11 @@ public class UserAccountRepository {
         }
         return false;
     }
-
+    /**
+     * Uspostavlja vezu s bazom podataka.
+     *
+     * @return Veza s bazom podataka
+     */
     private Connection getConnection() {
         Connection connection = null;
         try {
