@@ -13,17 +13,25 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Testira funkcionalnosti klase PriceDBService.
+ */
 public class PriceDBServiceTest {
     private PriceDBRepository priceDBRepository;
     private PriceDBService priceDBService;
 
+    /**
+     * Priprema potrebnih objekata prije svakog testa.
+     */
     @BeforeEach
     public void setUp() {
         priceDBRepository = new PriceDBRepository();
         priceDBService = new PriceDBService(priceDBRepository);
     }
 
-
+    /**
+     * Testira dodavanje podataka u repozitorij.
+     */
     @Test
     public void testAddData() {
         // Arrange
@@ -40,7 +48,9 @@ public class PriceDBServiceTest {
         // Assert
         assertTrue(priceDBRepository.getDataList().contains(expectedData), "Expected data not found in the repository");
     }
-
+    /**
+     * Testira uklanjanje podataka iz repozitorija.
+     */
     @Test
     public void testRemoveData() {
         // Arrange
@@ -58,6 +68,9 @@ public class PriceDBServiceTest {
         // Assert
         assertFalse(priceDBRepository.getDataList().contains(data), "Removed data still found in the repository");
     }
+    /**
+     * Testira dobavljanje svih filmova iz repozitorija.
+     */
     @Test
     public void testGetAllMovies() {
         // Arrange
