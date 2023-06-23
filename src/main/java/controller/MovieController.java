@@ -69,7 +69,7 @@ public class MovieController {
     }
     @FXML
     private TextField searchBar;
-
+/*
     @FXML
     void searchMovies(ActionEvent event) throws IOException {
         String searchTerm = searchBar.getText();
@@ -86,12 +86,13 @@ public class MovieController {
         stage.setScene(scene);
         stage.show();
     }
-
+*/
     @FXML
     private MenuButton DateAndTime;
 
     @FXML
     private MenuButton NumberOfTickets;
+    /*
     @FXML
     private void chooseDateTime(ActionEvent event) {
         // Pripremite podatke koje želite prikazati u listi
@@ -103,7 +104,8 @@ public class MovieController {
         ListView<Object> cartListView = null;
         cartListView.getItems().add(item);
     }
-
+*/
+    /*
     @FXML
     private void chooseNumberOfTickets(ActionEvent event) {
         // Pripremite podatke koje želite prikazati u listi
@@ -115,13 +117,14 @@ public class MovieController {
         ListView<Object> cartListView = null;
         cartListView.getItems().add(item);
     }
+*/
 
     //custom exception
-    public static class MovieNotFoundException extends RuntimeException {
+  /*  public static class MovieNotFoundException extends RuntimeException {
         public MovieNotFoundException(String message) {
             super(message);
         }
-    }
+    }*/
 }
 
 
