@@ -15,7 +15,9 @@ import java.util.List;
 import service.PriceDBService;
 import repository.PriceDBRepository;
 
-
+/**
+ * Kontroler koji upravlja procesom Korpe gdje biramo datum, vrijeme, film i broj karata.
+ */
 public class CartController {
     private PriceDBRepository priceDBRepository;
     private PriceDBService priceDBService;
@@ -68,7 +70,13 @@ public class CartController {
         priceDBService = new PriceDBService();
 
     }
-
+    /**
+     * Metoda koja se poziva prilikom odjave korisnika.
+     * Otvara novu scenu za prijavu nakon odjave.
+     *
+     * @param event Događaj koji je pokrenuo metodu.
+     * @throws IOException U slučaju greške prilikom učitavanja FXML datoteke za prijavu.
+     */
     @FXML
     void logout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
@@ -80,7 +88,12 @@ public class CartController {
         stage.setScene(scene);
         stage.show();
     }
-
+    /**
+     * Metoda koja postavlja scenu za prikaz glavnog menija.
+     *
+     * @param event Događaj koji je pokrenuo metodu.
+     * @throws IOException U slučaju greške prilikom učitavanja FXML datoteke za glavni meni.
+     */
     @FXML
     void setMovies(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
@@ -92,7 +105,12 @@ public class CartController {
         stage.setScene(scene);
         stage.show();
     }
-
+    /**
+     * Metoda koja postavlja scenu za prikaz korpe.
+     *
+     * @param event Događaj koji je pokrenuo metodu.
+     * @throws IOException U slučaju greške prilikom učitavanja FXML datoteke za korpu.
+     */
     @FXML
     void setCart(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Cart.fxml"));
@@ -105,7 +123,12 @@ public class CartController {
         stage.show();
     }
 
-
+    /**
+     * Metoda koja postavlja scenu za prikaz računa.
+     *
+     * @param event Događaj koji je pokrenuo metodu.
+     * @throws IOException U slučaju greške prilikom učitavanja FXML datoteke za račun.
+     */
     @FXML
     void setInvoice(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Invoice.fxml"));
@@ -118,7 +141,12 @@ public class CartController {
         stage.show();
     }
 
-
+    /**
+     * Metoda koja dodaje podatke o filmu u korpu.
+     * Podaci se prikazuju u tabeli korpe.
+     *
+     * @param actionEvent Događaj koji je pokrenuo metodu.
+     */
 
    @FXML
    public void addData(ActionEvent actionEvent) {
@@ -144,7 +172,11 @@ public class CartController {
        calculateSubtotal(); // Update the subtotal after adding the data
 
    }
-
+    /**
+     * Metoda koja uklanja odabrane podatke iz korpe.
+     *
+     * @param event Događaj koji je pokrenuo metodu.
+     */
     @FXML
     void deleteData(ActionEvent event) {
         int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
@@ -162,7 +194,9 @@ public class CartController {
         }
     }
 
-
+    /**
+     * Unutarnja klasa koja predstavlja podatke o filmu u korpi.
+     */
     //data
     public static class Data {
 
@@ -173,6 +207,15 @@ public class CartController {
         private int id;
 
         // private int retailPrice;
+        /**
+         * Konstruktor klase Data.
+         *
+         * @param movie          Naziv filma.
+         * @param dateAndTime    Datum i vrijeme projekcije.
+         * @param numberOfTickets Broj karata.
+         * @param price          Cijena po karti.
+         */
+
         public Data(String movie, String dateAndTime, int numberOfTickets, int price) {
             this.numberOfTickets = numberOfTickets;
             this.movie = movie;
@@ -180,48 +223,91 @@ public class CartController {
             this.price = price;
             // this.retailPrice = price;
         }
-
+        /**
+         * Metoda koja vraća broj karata.
+         *
+         * @return Broj karata.
+         */
         public int getNumberOfTickets() {
             return numberOfTickets;
         }
-
+        /**
+         * Metoda koja postavlja broj karata.
+         *
+         * @param numberOfTickets Broj karata koji se postavlja.
+         */
         public void setNumberOfTickets(int numberOfTickets) {
             this.numberOfTickets = numberOfTickets;
         }
-
+        /**
+         * Metoda koja vraća naziv filma.
+         *
+         * @return Naziv filma.
+         */
         public String getMovie() {
             return movie;
         }
-
+        /**
+         * Metoda koja postavlja naziv filma.
+         *
+         * @param movie Naziv filma koji se postavlja.
+         */
         public void setMovie(String movie) {
             this.movie = movie;
         }
-
+        /**
+         * Metoda koja vraća datum i vrijeme projekcije.
+         *
+         * @return Datum i vrijeme projekcije.
+         */
         public String getDateAndTime() {
             return dateAndTime;
         }
-
+        /**
+         * Metoda koja postavlja datum i vrijeme projekcije.
+         *
+         * @param dateAndTime Datum i vrijeme projekcije koji se postavljaju.
+         */
         public void setDateAndTime(String dateAndTime) {
             this.dateAndTime = dateAndTime;
         }
-
+        /**
+         * Metoda koja vraća cijenu.
+         *
+         * @return Cijena.
+         */
         public int getPrice() {
             return price;
         }
-
+        /**
+         * Metoda koja postavlja cijenu.
+         *
+         * @param price Cijena koja se postavlja.
+         */
         public void setPrice(int price) {
             this.price = price;
         }
-
+        /**
+         * Metoda koja ažurira cijenu na osnovu broja karata.
+         * Ažurirana cijena je umnožak originalne cijene i broja karata.
+         */
         private void updatePrice() {
             this.price = this.price * this.numberOfTickets;
         }
 
-
+        /**
+         * Metoda koja postavlja ID.
+         *
+         * @param id ID koji se postavlja.
+         */
         public void setId(int id) {
             this.id = id;
         }
-
+        /**
+         * Metoda koja vraća ID.
+         *
+         * @return ID.
+         */
         public int getId() {
             return id;
         }
@@ -229,7 +315,11 @@ public class CartController {
 
     }
 
-
+    /**
+     * Metoda koja se poziva prilikom odabira filma iz menija.
+     *
+     * @param actionEvent Događaj koji je pokrenuo metodu.
+     */
     @FXML
     void selectMovie(ActionEvent actionEvent) {
         MenuItem selectedItem = (MenuItem) actionEvent.getSource();
@@ -237,14 +327,21 @@ public class CartController {
         movie.setText(selectedCategory);
     }
 
-
+    /**
+     * Metoda koja se poziva prilikom odabira datuma i vremena iz menija.
+     *
+     * @param actionEvent Događaj koji je pokrenuo metodu.
+     */
     @FXML
     void selectDateAndTime(ActionEvent actionEvent) {
         MenuItem selectedItem = (MenuItem) actionEvent.getSource();
         String selectedCategory = selectedItem.getText();
         dateAndTime.setText(selectedCategory);
     }
-
+    /**
+     * Metoda koja izračunava ukupnu cijenu za sve stavke u košarici.
+     * Prikazuje izračunatu sumu u polju za subtotal.
+     */
 
   @FXML
   void calculateSubtotal() {
@@ -256,13 +353,20 @@ public class CartController {
       subtotal.setText(Integer.toString(subtotalPrice));
   }
 
-
+    /**
+     * Metoda koja se poziva prilikom inicijalizacije kontrolera.
+     * Učitava sve filmove iz PriceDBRepository-a i popunjava izbornik za odabir filma.
+     */
     @FXML
     public void initialize() {
         List<String> movies = priceDBRepository.getAllMovies();
         populateMovieMenu(movies);
     }
-
+    /**
+     * Metoda koja popunjava izbornik za odabir filma s listom filmova.
+     *
+     * @param movies Lista filmova.
+     */
     private void populateMovieMenu(List<String> movies) {
         ObservableList<MenuItem> movieItems = movie.getItems(); // Dohvatite referencu na listu stavki MenuButton-a
 
