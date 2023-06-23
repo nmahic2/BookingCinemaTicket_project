@@ -40,8 +40,9 @@ public class RegistrationController extends Parent {
      * Inicijalizira objekat UserAccountService koji se koristi za kreiranje korisničkih računa.
      */
     public RegistrationController() {
-        userAccountService = new UserAccountService(); // Inicijalizacija objekta
+        userAccountService = new UserAccountService();
     }
+
     /**
      * Metoda koja se poziva prilikom klika na dugme za registraciju.
      * Vrši validaciju unesenih podataka, kreira korisnički račun i otvara novu scenu nakon uspješne registracije.
@@ -54,6 +55,7 @@ public class RegistrationController extends Parent {
         String password = passwordFieldRegistration.getText();
         String firstName = firstnameFieldRegistration.getText();
         String lastName = lastnameFieldRegistration.getText();
+
 
         // Provjerite da li su sva polja popunjena
         if (username.isEmpty() || password.isEmpty() ||  firstName.isEmpty() || lastName.isEmpty()) {
@@ -84,6 +86,8 @@ public class RegistrationController extends Parent {
         } else {
             errorLabelRegistration.setText("Username already exists. Please choose a different username.");
         }
+
+
     }
     /**
      * Metoda koja briše sadržaj svih tekstualnih polja za unos.
