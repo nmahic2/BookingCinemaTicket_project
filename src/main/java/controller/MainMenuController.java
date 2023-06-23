@@ -191,9 +191,9 @@ public class MainMenuController<PaintRenderJob>  {
             case "Monster house":
                 return new Scene(FXMLLoader.load(getClass().getResource("/Movie.fxml")));
             case "Justice legue":
-                return new Scene(FXMLLoader.load(getClass().getResource("/Movie2.fxml")));
-            case "Southland tales":
                 return new Scene(FXMLLoader.load(getClass().getResource("/Movie3.fxml")));
+            case "Southland tales":
+                return new Scene(FXMLLoader.load(getClass().getResource("/Movie2.fxml")));
             case "Spuderman":
                 return new Scene(FXMLLoader.load(getClass().getResource("/Movie5.fxml")));
             case "Onward":
