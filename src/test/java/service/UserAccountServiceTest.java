@@ -8,17 +8,25 @@ import repository.UserAccountRepository;
 import service.UserAccountService;
 
 import static org.junit.Assert.*;
-
+/**
+ * Testira funkcionalnosti klase UserAccountService.
+ */
 public class UserAccountServiceTest {
     private UserAccountRepository userRepository;
     private UserAccountService userAccountService;
 
+    /**
+     * Priprema potrebnih objekata prije svakog testa.
+     */
     @Before
     public void setup() {
         userRepository = new UserAccountRepository();
         userAccountService = new UserAccountService();
     }
 
+    /**
+     * Testira kreiranje korisničkog računa sa validnim podacima.
+     */
     @Test
     public void testCreateUserAccount_ValidData_ReturnsTrue() {
         // Arrange
@@ -37,7 +45,9 @@ public class UserAccountServiceTest {
 
     }
 
-
+    /**
+     * Testira kreiranje korisničkog računa sa dupliranim korisničkim imenom.
+     */
     @Test
     public void testCreateUserAccount_DuplicateUsername_ReturnsFalse() {
         // Arrange
@@ -60,7 +70,9 @@ public class UserAccountServiceTest {
         // Assert
         assertFalse(isCreated);
     }
-
+    /**
+     * Testira provjeru validnosti prijave sa validnim vjerodajnicama.
+     */
     @Test
     public void testValidateLogin_ValidCredentials_ReturnsTrue() {
         // Arrange
@@ -76,7 +88,9 @@ public class UserAccountServiceTest {
         // Assert
         assertTrue(isValid);
     }
-
+    /**
+     * Testira provjeru validnosti prijave sa nevalidnim vjerodajnicama.
+     */
     @Test
     public void testValidateLogin_InvalidCredentials_ReturnsFalse() {
         // Arrange
