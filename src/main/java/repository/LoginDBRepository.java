@@ -10,7 +10,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+/**
+ * Klasa koja pruža funkcionalnosti za provjeru prijave korisnika u bazu podataka.
+ */
 public class LoginDBRepository {
+    /**
+     * Metoda za uspostavljanje veze s bazom podataka.
+     *
+     * @return Veza s bazom podataka
+     */
     private Connection getConnection() {
         Connection databaseLink = null;
 
@@ -34,7 +42,13 @@ public class LoginDBRepository {
 
         return databaseLink;
     }
-
+    /**
+     * Metoda za provjeru ispravnosti prijave korisnika.
+     *
+     * @param username Korisničko ime
+     * @param password Lozinka
+     * @return true ako je prijava ispravna, false inače
+     */
     public boolean validateLogin(String username, String password) {
         Connection connectDB = getConnection();
         boolean isValidLogin = false;
@@ -55,8 +69,7 @@ public class LoginDBRepository {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // Zatvorite PreparedStatement i Connection
-            // Možete koristiti try-with-resources blok za automatsko zatvaranje resursa u novijim verzijama Jave
+
             try {
                 if (connectDB != null) {
                     connectDB.close();
