@@ -35,6 +35,7 @@ public class RegistrationController extends Parent {
     @FXML
     private Button registration;
     private UserAccountService userAccountService; // Dodano polje
+
     /**
      * Konstruktor klase RegistrationController.
      * Inicijalizira objekat UserAccountService koji se koristi za kreiranje korisničkih računa.
@@ -58,10 +59,10 @@ public class RegistrationController extends Parent {
 
 
         // Provjerite da li su sva polja popunjena
-        if (username.isEmpty() || password.isEmpty() ||  firstName.isEmpty() || lastName.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty() || firstName.isEmpty() || lastName.isEmpty()) {
             errorLabelRegistration.setText("Please fill in all fields");
             return;
-        } else{
+        } else {
             try {
                 // Učitavanje FXML datoteke drugog prozora
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
@@ -89,6 +90,7 @@ public class RegistrationController extends Parent {
 
 
     }
+
     /**
      * Metoda koja briše sadržaj svih tekstualnih polja za unos.
      */
