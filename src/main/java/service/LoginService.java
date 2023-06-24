@@ -31,9 +31,6 @@ public class LoginService {
      * @return {@code true} ako je prijava valjana, inače {@code false}
      */
     public boolean validateLogin(String username, String password) {
-        // Ovdje možete dodati dodatnu poslovnu logiku, provjeru i validaciju
-        // npr. provjeru duljine korisničkog imena/lozinke, enkripciju itd.
-
         return loginRepo.validateLogin(username, password);
     }
 
