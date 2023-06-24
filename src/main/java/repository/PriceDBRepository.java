@@ -1,5 +1,6 @@
 
 package repository;
+
 import controller.CartController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,12 +17,14 @@ import java.util.Properties;
  */
 public class PriceDBRepository {
     private ObservableList<CartController.Data> dataListCart;
+
     /**
      * Konstruktor koji inicijalizira listu podataka o košarici.
      */
     public PriceDBRepository() {
         dataListCart = FXCollections.observableArrayList();
     }
+
     /**
      * Dodaje podatke o košarici u bazu podataka i listu podataka.
      *
@@ -31,6 +34,7 @@ public class PriceDBRepository {
         insertDataIntoDatabase(data);
         dataListCart.add(data);
     }
+
     /**
      * Uklanja podatke o košarici iz baze podataka i liste podataka.
      *
@@ -40,6 +44,7 @@ public class PriceDBRepository {
         deleteDataFromDatabase(data);
         dataListCart.remove(data);
     }
+
     /**
      * Vraća listu podataka o košarici.
      *
@@ -48,6 +53,7 @@ public class PriceDBRepository {
     public ObservableList<CartController.Data> getDataList() {
         return dataListCart;
     }
+
     /**
      * Metoda za uspostavljanje veze s bazom podataka.
      *
@@ -75,6 +81,7 @@ public class PriceDBRepository {
 
         return databaseLink;
     }
+
     /**
      * Ubacuje podatke o košarici u bazu podataka.
      *
@@ -103,6 +110,7 @@ public class PriceDBRepository {
             e.printStackTrace();
         }
     }
+
     /**
      * Briše podatke o košarici iz baze podataka.
      *
@@ -119,6 +127,7 @@ public class PriceDBRepository {
             e.printStackTrace();
         }
     }
+
     /**
      * Vraća cijenu za određeni film iz baze podataka.
      *
@@ -141,6 +150,7 @@ public class PriceDBRepository {
 
         return 0; // Return a default price if the movie is not found or there is an error
     }
+
     /**
      * Vraća listu svih filmova iz baze podataka.
      *
