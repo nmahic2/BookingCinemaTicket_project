@@ -1,7 +1,6 @@
 package service;
 
 
-
 import controller.CartController;
 import repository.PriceDBRepository;
 
@@ -12,12 +11,14 @@ import java.util.List;
  */
 public class PriceDBService {
     private PriceDBRepository priceDBRepository;
+
     /**
      * Konstruktor koji stvara novu instancu servisa s podrazumijevanim repozitorijem.
      */
     public PriceDBService() {
         priceDBRepository = new PriceDBRepository();
     }
+
     /**
      * Konstruktor koji stvara novu instancu servisa s određenim repozitorijem.
      *
@@ -26,6 +27,7 @@ public class PriceDBService {
     public PriceDBService(PriceDBRepository priceDBRepository) {
         this.priceDBRepository = priceDBRepository;
     }
+
     /**
      * Dodaje podatke o kartici u repozitorij.
      *
@@ -34,6 +36,7 @@ public class PriceDBService {
     public void addData(CartController.Data data) {
         priceDBRepository.addData(data);
     }
+
     /**
      * Dohvaća sve filmove iz repozitorija.
      *
@@ -42,6 +45,7 @@ public class PriceDBService {
     public List<String> getAllMovies() {
         return priceDBRepository.getAllMovies();
     }
+
     /**
      * Uklanja podatke o kartici iz repozitorija.
      *
@@ -50,7 +54,6 @@ public class PriceDBService {
     public void removeData(CartController.Data data) {
         priceDBRepository.removeData(data);
     }
-
 
 
 }
