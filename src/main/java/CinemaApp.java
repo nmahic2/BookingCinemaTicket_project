@@ -1,10 +1,12 @@
 
 import java.util.Scanner;
+
 /**
  * Aplikacija za rezervaciju karata za kino.
  */
 public class CinemaApp {
     private static Scanner scanner = new Scanner(System.in);
+
     /**
      * Glavna metoda koja pokreće aplikaciju za rezervaciju karata za kino.
      *
@@ -26,6 +28,7 @@ public class CinemaApp {
 
         System.out.println(ticket);
     }
+
     /**
      * Metoda za prijavu korisnika.
      */
@@ -39,6 +42,7 @@ public class CinemaApp {
         // Implementirajte logiku provjere korisničkih podataka ovdje
         System.out.println("Prijavili ste se kao " + username);
     }
+
     /**
      * Metoda za odabir filma.
      *
@@ -121,6 +125,7 @@ public class CinemaApp {
         System.out.println("Odabrali ste " + numberOfTickets + " karata.");
         return numberOfTickets;
     }
+
     /**
      * Metoda za odabir datuma.
      *
@@ -171,6 +176,7 @@ public class CinemaApp {
         return date;
     }
 }
+
 /**
  * Klasa koja predstavlja kartu za film.
  */
@@ -178,6 +184,7 @@ class Ticket {
     private String movieName;
     private int numberOfTickets;
     private String date;
+
     /**
      * Konstruktor za stvaranje karte.
      *
@@ -190,6 +197,7 @@ class Ticket {
         this.numberOfTickets = numberOfTickets;
         this.date = date;
     }
+
     /**
      * Vraća tekstualni prikaz karte za film.
      *
@@ -206,6 +214,7 @@ class Ticket {
                 "Karte mogu biti preuzete na blagajni.";
     }
 }
+
 /**
  * Builder klasa za stvaranje karte.
  */
@@ -213,6 +222,7 @@ class TicketBuilder {
     private String movieName;
     private int numberOfTickets;
     private String date;
+
     /**
      * Postavlja naziv filma.
      *
@@ -223,6 +233,7 @@ class TicketBuilder {
         this.movieName = movieName;
         return this;
     }
+
     /**
      * Postavlja broj karata.
      *
@@ -233,6 +244,7 @@ class TicketBuilder {
         this.numberOfTickets = numberOfTickets;
         return this;
     }
+
     /**
      * Postavlja datum.
      *
@@ -243,6 +255,7 @@ class TicketBuilder {
         this.date = date;
         return this;
     }
+
     /**
      * Stvara novu instancu karte koristeći postavljene vrijednosti.
      *
