@@ -1,9 +1,7 @@
 
 package repository;
-
 import java.sql.*;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,7 +22,6 @@ public class LoginDBRepository {
 
         try {
             Properties properties = new Properties();
-            //FileInputStream fis = new FileInputStream("config.properties");
             FileInputStream fis = new FileInputStream("src/main/resources/config.properties");
 
             properties.load(fis);
@@ -69,7 +66,6 @@ public class LoginDBRepository {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-
             try {
                 if (connectDB != null) {
                     connectDB.close();
