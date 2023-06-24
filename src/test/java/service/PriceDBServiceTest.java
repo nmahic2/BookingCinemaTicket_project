@@ -48,6 +48,7 @@ public class PriceDBServiceTest {
         // Assert
         assertTrue(priceDBRepository.getDataList().contains(expectedData), "Expected data not found in the repository");
     }
+
     /**
      * Testira uklanjanje podataka iz repozitorija.
      */
@@ -68,6 +69,7 @@ public class PriceDBServiceTest {
         // Assert
         assertFalse(priceDBRepository.getDataList().contains(data), "Removed data still found in the repository");
     }
+
     /**
      * Testira dobavljanje svih filmova iz repozitorija.
      */
