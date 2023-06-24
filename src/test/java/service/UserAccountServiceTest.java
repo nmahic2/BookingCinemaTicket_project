@@ -36,7 +36,7 @@ public class UserAccountServiceTest {
         String password = "12345";
 
         UserAccountService userAccountService = new UserAccountService();
-        UserAccountRepository userRepository = new UserAccountRepository(); // Promeniti ovu liniju prema stvarnoj implementaciji
+        UserAccountRepository userRepository = new UserAccountRepository();
 
         // Act
         boolean isCreated = userAccountService.createUserAccount(firstName, lastName, username, password);
