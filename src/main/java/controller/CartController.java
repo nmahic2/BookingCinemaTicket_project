@@ -10,8 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.List;
+
 import service.PriceDBService;
 import repository.PriceDBRepository;
 
@@ -61,8 +63,10 @@ public class CartController {
     @FXML
     private Button addButton;
 
-
-
+    /**
+     * Konstruktor klase CartController.
+     * Inicijalizira instancu klase CartController i povezuje je s potrebnim servisima i repozitorijima.
+     */
 
     public CartController() {
 
@@ -70,6 +74,7 @@ public class CartController {
         priceDBService = new PriceDBService();
 
     }
+
     /**
      * Metoda koja se poziva prilikom odjave korisnika.
      * Otvara novu scenu za prijavu nakon odjave.
@@ -88,6 +93,7 @@ public class CartController {
         stage.setScene(scene);
         stage.show();
     }
+
     /**
      * Metoda koja postavlja scenu za prikaz glavnog menija.
      *
@@ -105,6 +111,7 @@ public class CartController {
         stage.setScene(scene);
         stage.show();
     }
+
     /**
      * Metoda koja postavlja scenu za prikaz korpe.
      *
@@ -148,30 +155,31 @@ public class CartController {
      * @param actionEvent Događaj koji je pokrenuo metodu.
      */
 
-   @FXML
-   public void addData(ActionEvent actionEvent) {
-       Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
-       DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
-       NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
-       dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+    @FXML
+    public void addData(ActionEvent actionEvent) {
+        Movie.setCellValueFactory(new PropertyValueFactory<>("movie"));
+        DateAndTime.setCellValueFactory(new PropertyValueFactory<>("dateAndTime"));
+        NumberOfTickets.setCellValueFactory(new PropertyValueFactory<>("numberOfTickets"));
+        dataColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-       String movie = this.movie.getText();
-       String dateAndTime = this.dateAndTime.getText();
-       int numberOfTickets = Integer.parseInt(this.numberOfTickets.getText());
+        String movie = this.movie.getText();
+        String dateAndTime = this.dateAndTime.getText();
+        int numberOfTickets = Integer.parseInt(this.numberOfTickets.getText());
 
-       int price = priceDBRepository.getPriceForMovie(movie); // Get the price from the PriceDBRepository
-       int totalPrice = price * numberOfTickets; // Calculate the total price
+        int price = priceDBRepository.getPriceForMovie(movie); // Get the price from the PriceDBRepository
+        int totalPrice = price * numberOfTickets; // Calculate the total price
 
-       CartController.Data data = new CartController.Data(movie, dateAndTime, numberOfTickets, totalPrice);
-       priceDBService.addData(data);
+        CartController.Data data = new CartController.Data(movie, dateAndTime, numberOfTickets, totalPrice); //novi objekat
+        priceDBService.addData(data);
 
-       dataListMovieCart.add(data);
-       tableView.setItems(dataListMovieCart);
+        dataListMovieCart.add(data);
+        tableView.setItems(dataListMovieCart);
 
-       this.numberOfTickets.clear();
-       calculateSubtotal(); // Update the subtotal after adding the data
+        this.numberOfTickets.clear();
+        calculateSubtotal(); // Update the subtotal after adding the data
 
-   }
+    }
+
     /**
      * Metoda koja uklanja odabrane podatke iz korpe.
      *
@@ -207,13 +215,14 @@ public class CartController {
         private int id;
 
         // private int retailPrice;
+
         /**
          * Konstruktor klase Data.
          *
-         * @param movie          Naziv filma.
-         * @param dateAndTime    Datum i vrijeme projekcije.
+         * @param movie           Naziv filma.
+         * @param dateAndTime     Datum i vrijeme projekcije.
          * @param numberOfTickets Broj karata.
-         * @param price          Cijena po karti.
+         * @param price           Cijena po karti.
          */
 
         public Data(String movie, String dateAndTime, int numberOfTickets, int price) {
@@ -223,6 +232,7 @@ public class CartController {
             this.price = price;
             // this.retailPrice = price;
         }
+
         /**
          * Metoda koja vraća broj karata.
          *
@@ -231,6 +241,7 @@ public class CartController {
         public int getNumberOfTickets() {
             return numberOfTickets;
         }
+
         /**
          * Metoda koja postavlja broj karata.
          *
@@ -239,6 +250,7 @@ public class CartController {
         public void setNumberOfTickets(int numberOfTickets) {
             this.numberOfTickets = numberOfTickets;
         }
+
         /**
          * Metoda koja vraća naziv filma.
          *
@@ -247,6 +259,7 @@ public class CartController {
         public String getMovie() {
             return movie;
         }
+
         /**
          * Metoda koja postavlja naziv filma.
          *
@@ -255,6 +268,7 @@ public class CartController {
         public void setMovie(String movie) {
             this.movie = movie;
         }
+
         /**
          * Metoda koja vraća datum i vrijeme projekcije.
          *
@@ -263,6 +277,7 @@ public class CartController {
         public String getDateAndTime() {
             return dateAndTime;
         }
+
         /**
          * Metoda koja postavlja datum i vrijeme projekcije.
          *
@@ -271,6 +286,7 @@ public class CartController {
         public void setDateAndTime(String dateAndTime) {
             this.dateAndTime = dateAndTime;
         }
+
         /**
          * Metoda koja vraća cijenu.
          *
@@ -279,6 +295,7 @@ public class CartController {
         public int getPrice() {
             return price;
         }
+
         /**
          * Metoda koja postavlja cijenu.
          *
@@ -287,6 +304,7 @@ public class CartController {
         public void setPrice(int price) {
             this.price = price;
         }
+
         /**
          * Metoda koja ažurira cijenu na osnovu broja karata.
          * Ažurirana cijena je umnožak originalne cijene i broja karata.
@@ -303,6 +321,7 @@ public class CartController {
         public void setId(int id) {
             this.id = id;
         }
+
         /**
          * Metoda koja vraća ID.
          *
@@ -338,30 +357,32 @@ public class CartController {
         String selectedCategory = selectedItem.getText();
         dateAndTime.setText(selectedCategory);
     }
+
     /**
      * Metoda koja izračunava ukupnu cijenu za sve stavke u košarici.
      * Prikazuje izračunatu sumu u polju za subtotal.
      */
 
-  @FXML
-  void calculateSubtotal() {
-      int subtotalPrice = 0;
-      for (Data data : dataListMovieCart) {
-          subtotalPrice += data.getPrice();
-      }
+    @FXML
+    void calculateSubtotal() {
+        int subtotalPrice = 0;
+        for (Data data : dataListMovieCart) {
+            subtotalPrice += data.getPrice();
+        }
 
-      subtotal.setText(Integer.toString(subtotalPrice));
-  }
+        subtotal.setText(Integer.toString(subtotalPrice));
+    }
 
     /**
      * Metoda koja se poziva prilikom inicijalizacije kontrolera.
      * Učitava sve filmove iz PriceDBRepository-a i popunjava izbornik za odabir filma.
      */
-    @FXML
+   @FXML
     public void initialize() {
         List<String> movies = priceDBRepository.getAllMovies();
         populateMovieMenu(movies);
     }
+
     /**
      * Metoda koja popunjava izbornik za odabir filma s listom filmova.
      *
@@ -376,7 +397,6 @@ public class CartController {
             movieItems.add(menuItem); // Dodajte stavku u listu stavki MenuButton-a
         }
     }
-
 
 
 }
