@@ -1,6 +1,5 @@
 package controller;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,14 +9,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
  * Kontroler koji upravlja funkcionalnostima za prikaz glavnog menija sa filmovima.
  */
 
-public class MainMenuController<PaintRenderJob>  {
+public class MainMenuController {
 
     @FXML
     private Menu Cart;
@@ -80,6 +78,7 @@ public class MainMenuController<PaintRenderJob>  {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     private javafx.scene.image.ImageView slika1;
     @FXML
@@ -218,6 +217,7 @@ public class MainMenuController<PaintRenderJob>  {
             alert.showAndWait();
         }
     }
+
     /**
      * Metoda koja vraća odgovarajuću scenu za određeni naziv filma.
      *
