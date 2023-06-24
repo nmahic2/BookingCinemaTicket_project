@@ -1,20 +1,17 @@
 
 package controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import java.io.IOException;
-
 import service.LoginService;
+
 /**
  * Kontroler koji upravlja funkcionalnostima prijave korisnika.
  */
@@ -43,6 +40,7 @@ public class LogInController {
     public LogInController() {
         this.loginService = new LoginService();
     }
+
     /**
      * Metoda koja se poziva prilikom pritiska na dugme za prijavu.
      * Provjerava unesene podatke za prijavu i preusmjerava korisnika na glavni meni ako su podaci ispravni.
@@ -57,6 +55,7 @@ public class LogInController {
             errorLabel.setText("Please enter username and password");
         }
     }
+
     /**
      * Metoda koja provjerava unesene podatke za prijavu.
      * Ako su podaci ispravni, korisnika preusmjerava na glavni meni.
