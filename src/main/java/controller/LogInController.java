@@ -48,7 +48,7 @@ public class LogInController {
      * @param e Akcijski događaj
      * @throws IOException U slučaju problema s učitavanjem FXML datoteke za glavni meni
      */
-    public void login(ActionEvent e) throws IOException {
+    public void login(ActionEvent e) throws IOException, InvalidLoginException {
         if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
             validateLogin();
         } else {
@@ -63,7 +63,7 @@ public class LogInController {
      *
      * @throws IOException U slučaju problema s učitavanjem FXML datoteke za glavni meni
      */
-    public void validateLogin() throws IOException {
+    public void validateLogin() throws IOException, InvalidLoginException {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -81,6 +81,7 @@ public class LogInController {
             stage.show();
         } else {
             errorLabel.setText("Invalid login!");
+            throw new InvalidLoginException("Invalid login!");
         }
     }
 
@@ -101,6 +102,15 @@ public class LogInController {
                 e.printStackTrace();
             }
         });
+    }
+
+    /**
+     * Korisnički definisan exception
+     */
+    public class InvalidLoginException extends Exception {
+        public InvalidLoginException(String message) {
+            super(message);
+        }
     }
 }
 
