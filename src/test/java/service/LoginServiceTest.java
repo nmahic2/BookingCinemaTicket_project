@@ -62,11 +62,19 @@ public class LoginServiceTest {
      */
     @Test
     public void testValidateLogin_BlankSpace(){
+        // Arrange
         String username = "";
         String password = "";
 
-        boolean isBlank = loginService.validateLogin(username, password);
+        // Mockanje ponašanja repozitorija
+        when(loginRepo.validateLogin(username, password)).thenReturn(false);
 
+        // Act
+        boolean isValid = loginService.validateLogin(username, password);
+
+        // Assert
+        assertFalse(isValid);
     }
+
 }
 
