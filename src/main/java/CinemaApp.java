@@ -38,8 +38,6 @@ public class CinemaApp {
         String username = scanner.nextLine();
         System.out.print("Lozinka: ");
         String password = scanner.nextLine();
-        // Provjera korisničkog imena i lozinke
-        // Implementirajte logiku provjere korisničkih podataka ovdje
         System.out.println("Prijavili ste se kao " + username);
     }
 
