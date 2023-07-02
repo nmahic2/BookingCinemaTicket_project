@@ -25,27 +25,6 @@ public class UserAccountServiceTest {
     }
 
     /**
-     * Testira kreiranje korisničkog računa sa validnim podacima.
-     */
-    @Test
-    public void testCreateUserAccount_ValidData_ReturnsTrue() {
-        // Arrange
-        String firstName = "nejla";
-        String lastName = "mahic";
-        String username = "nmahic1";
-        String password = "12345";
-
-        UserAccountService userAccountService = new UserAccountService();
-        UserAccountRepository userRepository = new UserAccountRepository();
-
-        // Act
-        boolean isCreated = userAccountService.createUserAccount(firstName, lastName, username, password);
-
-
-
-    }
-
-    /**
      * Testira kreiranje korisničkog računa sa dupliranim korisničkim imenom.
      */
     @Test
@@ -107,4 +86,18 @@ public class UserAccountServiceTest {
         assertFalse(isValid);
     }
 
+    @Test
+    public void testCreateUserAccount_EmptyField_ReturnsFalse() {
+        // Priprema testnih podataka
+        String firstName1 = "";
+        String lastName1 = "mahic";
+        String username1 = "nmahic2";
+        String password1 = "123456";
+
+        // Pokretanje metode koju želimo testirati
+        boolean result = userAccountService.createUserAccount(firstName1, lastName1, username1, password1);
+
+        // Provera da li je rezultat očekivan
+        assertFalse("Kreiranje korisničkog naloga treba da vrati 'false' ako je jedno od polja prazno", result);
+    }
 }
