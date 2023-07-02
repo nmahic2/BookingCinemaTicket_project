@@ -1,6 +1,8 @@
 
 package repository;
 
+import javafx.scene.control.Alert;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -45,6 +47,7 @@ public class UserAccountRepository {
      */
 
     public void save(String firstName, String lastName, String username, String password) {
+
         try (Connection connection = getConnection()) {
             String query = "INSERT INTO useraccount (firstname, lastname, username, password) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -57,6 +60,7 @@ public class UserAccountRepository {
             e.printStackTrace();
         }
     }
+
     /**
      * Provjerava valjanost korisničkog prijavljivanja.
      *
@@ -65,6 +69,7 @@ public class UserAccountRepository {
      * @return {@code true} ako je prijava valjana, inače {@code false}
      */
     public boolean validateLogin(String username, String password) {
+
         try (Connection connection = getConnection()) {
             String query = "SELECT * FROM useraccount WHERE username = ? AND password = ?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -77,6 +82,7 @@ public class UserAccountRepository {
         }
         return false;
     }
+
     /**
      * Provjerava postojanje korisnika s određenim korisničkim imenom.
      *

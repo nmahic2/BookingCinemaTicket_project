@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import java.io.IOException;
 import service.UserAccountService;
 
+
 /**
  * Kontroler koji upravlja procesom registracije korisnika.
  */
@@ -57,12 +58,26 @@ public class RegistrationController extends Parent {
         String firstName = firstnameFieldRegistration.getText();
         String lastName = lastnameFieldRegistration.getText();
 
-
         // Provjerite da li su sva polja popunjena
         if (username.isEmpty() || password.isEmpty() || firstName.isEmpty() || lastName.isEmpty()) {
             errorLabelRegistration.setText("Please fill in all fields");
             return;
-        } else {
+        }
+
+        // Provjerite postojanje korisnika s unesenim korisničkim imenom
+        boolean usernameExists = userAccountService.findByUsername(username);
+        if (usernameExists) {
+            errorLabelRegistration.setText("Username already exists. Please choose a different username.");
+            return;
+        }
+
+        // Kreirajte korisnički račun
+        boolean success = userAccountService.createUserAccount(firstName, lastName, username, password); // Promjena poziva metode
+
+        if (success) {
+            errorLabelRegistration.setText("Registration successful!");
+            clearFields();
+
             try {
                 // Učitavanje FXML datoteke drugog prozora
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainMenu.fxml"));
@@ -73,21 +88,16 @@ public class RegistrationController extends Parent {
                 Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.show();
+
+                // Zatvaranje trenutne scene za registraciju
+                Stage currentStage = (Stage) registration.getScene().getWindow();
+                currentStage.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-
-        // Kreirajte korisnički račun
-        boolean success = userAccountService.createUserAccount(firstName, lastName, username, password); // Promjena poziva metode
-
-        if (success) {
-            errorLabelRegistration.setText("Registration successful!");
-            clearFields();
         } else {
-            errorLabelRegistration.setText("Username already exists. Please choose a different username.");
+            errorLabelRegistration.setText("Error occurred. Please try again.");
         }
-
 
     }
 

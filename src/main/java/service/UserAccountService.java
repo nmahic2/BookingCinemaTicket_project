@@ -3,9 +3,14 @@ package service;
 
 import repository.UserAccountRepository;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Servis za upravljanje korisničkim računima i autentikacijom.
  */
+
 public class UserAccountService {
     private UserAccountRepository userRepository;
 
@@ -32,8 +37,8 @@ public class UserAccountService {
             return false;
         }
 
-        userRepository.save(firstName, lastName, username, password);
-        return true;
+       userRepository.save(firstName, lastName, username, password);
+       return true;
     }
 
 
@@ -45,6 +50,14 @@ public class UserAccountService {
      * @return true ako je prijava uspješna, false ako prijava nije valjana
      */
     public boolean validateLogin(String username, String password) {
-        return userRepository.validateLogin(username, password);
+      return userRepository.validateLogin(username, password);
+
+    }
+    /**
+     * Provjerava da li postoji korisnik sa istim username-om.
+     *
+     */
+    public boolean findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }
